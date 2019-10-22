@@ -7,7 +7,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Item-->
+        <!--世界時鐘-->
         <scene sceneID="Ksl-jR-L3s">
             <objects>
                 <viewController id="fAw-g1-8dC" sceneMemberID="viewController">
@@ -17,7 +17,7 @@
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="zzK-FA-13l"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Item" id="Oeu-o1-w9G"/>
+                    <tabBarItem key="tabBarItem" title="世界時鐘" image="globe" catalog="system" id="Oeu-o1-w9G"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dvq-rN-tRc" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -33,7 +33,7 @@
             </objects>
             <point key="canvasLocation" x="722" y="-757"/>
         </scene>
-        <!--Item-->
+        <!--就寢時間-->
         <scene sceneID="iA8-I3-mdY">
             <objects>
                 <viewController id="yQ1-XT-FeE" sceneMemberID="viewController">
@@ -43,13 +43,13 @@
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="blq-Al-XQO"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Item" id="5rB-cq-gwa"/>
+                    <tabBarItem key="tabBarItem" title="就寢時間" image="bed.double.fill" catalog="system" id="5rB-cq-gwa"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iLM-dv-FOY" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="722" y="-290"/>
         </scene>
-        <!--Item-->
+        <!--計時器-->
         <scene sceneID="jZ7-oD-HLX">
             <objects>
                 <viewController id="raZ-G0-yHv" sceneMemberID="viewController">
@@ -59,13 +59,13 @@
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="3WU-8l-h5J"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Item" id="x8A-v8-R1d"/>
+                    <tabBarItem key="tabBarItem" title="計時器" image="timer" catalog="system" id="x8A-v8-R1d"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6fq-y8-Vku" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="375" y="1171"/>
         </scene>
-        <!--Item-->
+        <!--碼錶-->
         <scene sceneID="5Z4-SM-ah9">
             <objects>
                 <viewController id="gjp-d2-fat" sceneMemberID="viewController">
@@ -75,7 +75,7 @@
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="IjP-FY-TDD"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Item" id="DSF-BO-7p0"/>
+                    <tabBarItem key="tabBarItem" title="碼錶" image="stopwatch.fill" catalog="system" id="DSF-BO-7p0"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="o42-pG-Cq7" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -88,6 +88,8 @@
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="PNf-3z-Jr6">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="barTintColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="selectedImageTintColor" red="1" green="0.57810515169999999" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </tabBar>
                     <connections>
                         <segue destination="fAw-g1-8dC" kind="relationship" relationship="viewControllers" id="vut-jy-mT2"/>
@@ -102,4 +104,10 @@
             <point key="canvasLocation" x="-329" y="-290"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="bed.double.fill" catalog="system" width="64" height="40"/>
+        <image name="globe" catalog="system" width="64" height="60"/>
+        <image name="stopwatch.fill" catalog="system" width="60" height="64"/>
+        <image name="timer" catalog="system" width="64" height="60"/>
+    </resources>
 </document>
