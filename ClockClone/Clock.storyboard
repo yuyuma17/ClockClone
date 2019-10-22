@@ -54,13 +54,20 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="660"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <datePicker contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="time" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="Qcg-0X-ycS">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="227"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                            <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="time" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="Qcg-0X-ycS">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="230"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="230" id="bfx-eC-tWA"/>
+                                </constraints>
                                 <locale key="locale" localeIdentifier="zh_TW"/>
                             </datePicker>
                         </subviews>
                         <color key="backgroundColor" red="0.12984204290000001" green="0.12984612579999999" blue="0.12984395030000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="Qcg-0X-ycS" firstAttribute="top" secondItem="EhH-mq-Jja" secondAttribute="top" id="1S8-3w-Rhg"/>
+                            <constraint firstItem="Qcg-0X-ycS" firstAttribute="trailing" secondItem="EhH-mq-Jja" secondAttribute="trailing" id="OBB-zC-gJr"/>
+                            <constraint firstItem="Qcg-0X-ycS" firstAttribute="leading" secondItem="EhH-mq-Jja" secondAttribute="leading" id="Orp-bI-YPd"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="EhH-mq-Jja"/>
                     </view>
                     <navigationItem key="navigationItem" title="加入鬧鐘" id="c3r-gq-6A9">
@@ -77,6 +84,9 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="timePicker" destination="Qcg-0X-ycS" id="5Tk-vO-6Ek"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="37a-ba-ojx" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
