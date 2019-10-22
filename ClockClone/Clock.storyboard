@@ -9,13 +9,13 @@
         <!--鬧鐘-->
         <scene sceneID="dC2-uh-oI8">
             <objects>
-                <tableViewController id="ZPy-wf-jta" sceneMemberID="viewController">
+                <tableViewController id="ZPy-wf-jta" customClass="ClockTableViewController" customModule="時鐘" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="UUA-rl-MPG">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="692"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="tHM-gt-xjg">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="clockCell" id="tHM-gt-xjg">
                                 <rect key="frame" x="0.0" y="28" width="414" height="43.666667938232422"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="tHM-gt-xjg" id="HKM-FY-db7">
@@ -30,7 +30,14 @@
                         </connections>
                     </tableView>
                     <tabBarItem key="tabBarItem" title="鬧鐘" image="alarm.fill" catalog="system" id="zRy-ar-ykv"/>
-                    <navigationItem key="navigationItem" id="2MV-kL-mak"/>
+                    <navigationItem key="navigationItem" title="鬧鐘" id="2MV-kL-mak">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="JyK-yP-caC">
+                            <color key="tintColor" red="1" green="0.57810515169999999" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <connections>
+                                <action selector="addNewClock:" destination="ZPy-wf-jta" id="Dqd-OH-WQd"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="b2W-uV-03F" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -42,8 +49,8 @@
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="5Fb-93-rff" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="2jf-1K-R0O">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" barStyle="black" translucent="NO" largeTitles="YES" id="2jf-1K-R0O">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="96"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>

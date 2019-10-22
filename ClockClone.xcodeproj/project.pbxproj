@@ -9,23 +9,23 @@
 /* Begin PBXBuildFile section */
 		1609F6CB235E90EB00E18B85 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1609F6CA235E90EB00E18B85 /* AppDelegate.swift */; };
 		1609F6CD235E90EB00E18B85 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1609F6CC235E90EB00E18B85 /* SceneDelegate.swift */; };
-		1609F6CF235E90EB00E18B85 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1609F6CE235E90EB00E18B85 /* ViewController.swift */; };
 		1609F6D2235E90EB00E18B85 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1609F6D0235E90EB00E18B85 /* Main.storyboard */; };
 		1609F6D4235E90EB00E18B85 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1609F6D3235E90EB00E18B85 /* Assets.xcassets */; };
 		1609F6D7235E90EB00E18B85 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1609F6D5235E90EB00E18B85 /* LaunchScreen.storyboard */; };
 		1609F6DF235EA14700E18B85 /* Clock.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1609F6DE235EA14700E18B85 /* Clock.storyboard */; };
+		1609F6E1235EB0B100E18B85 /* ClockTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1609F6E0235EB0B100E18B85 /* ClockTableViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		1609F6C7235E90EB00E18B85 /* 時鐘.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "時鐘.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		1609F6CA235E90EB00E18B85 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1609F6CC235E90EB00E18B85 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		1609F6CE235E90EB00E18B85 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		1609F6D1235E90EB00E18B85 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		1609F6D3235E90EB00E18B85 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		1609F6D6235E90EB00E18B85 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		1609F6D8235E90EB00E18B85 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1609F6DE235EA14700E18B85 /* Clock.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Clock.storyboard; sourceTree = "<group>"; };
+		1609F6E0235EB0B100E18B85 /* ClockTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClockTableViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,7 +60,7 @@
 			children = (
 				1609F6CA235E90EB00E18B85 /* AppDelegate.swift */,
 				1609F6CC235E90EB00E18B85 /* SceneDelegate.swift */,
-				1609F6CE235E90EB00E18B85 /* ViewController.swift */,
+				1609F6E0235EB0B100E18B85 /* ClockTableViewController.swift */,
 				1609F6D0235E90EB00E18B85 /* Main.storyboard */,
 				1609F6DE235EA14700E18B85 /* Clock.storyboard */,
 				1609F6D3235E90EB00E18B85 /* Assets.xcassets */,
@@ -142,7 +142,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1609F6CF235E90EB00E18B85 /* ViewController.swift in Sources */,
+				1609F6E1235EB0B100E18B85 /* ClockTableViewController.swift in Sources */,
 				1609F6CB235E90EB00E18B85 /* AppDelegate.swift in Sources */,
 				1609F6CD235E90EB00E18B85 /* SceneDelegate.swift in Sources */,
 			);
