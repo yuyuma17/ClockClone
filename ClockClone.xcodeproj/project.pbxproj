@@ -15,6 +15,7 @@
 		1609F6DF235EA14700E18B85 /* Clock.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1609F6DE235EA14700E18B85 /* Clock.storyboard */; };
 		1609F6E1235EB0B100E18B85 /* ClockTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1609F6E0235EB0B100E18B85 /* ClockTableViewController.swift */; };
 		16A37BE3235ED9A2001C4901 /* AddClockViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16A37BE2235ED9A2001C4901 /* AddClockViewController.swift */; };
+		16A37BE5235EFD5C001C4901 /* ClockTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16A37BE4235EFD5C001C4901 /* ClockTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +29,7 @@
 		1609F6DE235EA14700E18B85 /* Clock.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Clock.storyboard; sourceTree = "<group>"; };
 		1609F6E0235EB0B100E18B85 /* ClockTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClockTableViewController.swift; sourceTree = "<group>"; };
 		16A37BE2235ED9A2001C4901 /* AddClockViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddClockViewController.swift; sourceTree = "<group>"; };
+		16A37BE4235EFD5C001C4901 /* ClockTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClockTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,6 +65,7 @@
 				1609F6CA235E90EB00E18B85 /* AppDelegate.swift */,
 				1609F6CC235E90EB00E18B85 /* SceneDelegate.swift */,
 				1609F6E0235EB0B100E18B85 /* ClockTableViewController.swift */,
+				16A37BE4235EFD5C001C4901 /* ClockTableViewCell.swift */,
 				16A37BE2235ED9A2001C4901 /* AddClockViewController.swift */,
 				1609F6D0235E90EB00E18B85 /* Main.storyboard */,
 				1609F6DE235EA14700E18B85 /* Clock.storyboard */,
@@ -146,6 +149,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				1609F6E1235EB0B100E18B85 /* ClockTableViewController.swift in Sources */,
+				16A37BE5235EFD5C001C4901 /* ClockTableViewCell.swift in Sources */,
 				1609F6CB235E90EB00E18B85 /* AppDelegate.swift in Sources */,
 				1609F6CD235E90EB00E18B85 /* SceneDelegate.swift in Sources */,
 				16A37BE3235ED9A2001C4901 /* AddClockViewController.swift in Sources */,

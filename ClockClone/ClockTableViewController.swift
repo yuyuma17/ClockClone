@@ -16,18 +16,20 @@ class ClockTableViewController: UITableViewController {
         self.navigationItem.leftBarButtonItem = self.editButtonItem
         editButtonItem.title = "編輯"
         editButtonItem.tintColor = .orange
+        
+        tableView.separatorColor = UIColor.lightGray
     }
     
     @IBAction func addNewClock(_ sender: UIBarButtonItem) {
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 1
+        return 5
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        let cell = tableView.dequeueReusableCell(withIdentifier: "clockCell", for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: "ClockCell", for: indexPath) as! ClockTableViewCell
         return cell
     }
 

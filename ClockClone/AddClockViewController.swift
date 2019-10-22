@@ -28,10 +28,10 @@ class AddClockViewController: UIViewController {
         
         if let pickerView = timePicker.subviews.first {
             
-            for subview in pickerView.subviews {
+            for subView in pickerView.subviews {
                 
-                if subview.frame.height <= 5 {
-                    subview.backgroundColor = UIColor.gray
+                if subView.frame.height <= 5 {
+                    subView.backgroundColor = UIColor.lightGray
                 }
             }
             self.timePicker.setValue(UIColor.white, forKey: "textColor")
