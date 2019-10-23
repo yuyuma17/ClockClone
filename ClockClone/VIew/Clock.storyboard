@@ -27,63 +27,80 @@
                                         <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="JS9-91-bsx">
                                             <rect key="frame" x="345" y="32.666666666666664" width="51" height="31.333333333333336"/>
                                         </switch>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="鬧鐘" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gi5-qg-Aq9">
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="鬧鐘" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gi5-qg-Aq9">
                                             <rect key="frame" x="22" y="67" width="31" height="18"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                             <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="，" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HfK-Ey-xPj">
-                                            <rect key="frame" x="56" y="56" width="18" height="24"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="，" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HfK-Ey-xPj">
+                                            <rect key="frame" x="56.000000000000007" y="53" width="25.333333333333336" height="30"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                             <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="上午" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WgJ-38-wv9">
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="上午" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WgJ-38-wv9">
                                             <rect key="frame" x="20" y="33" width="51" height="30"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                             <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="7" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Xi7-Wh-IqC">
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="7" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Xi7-Wh-IqC">
                                             <rect key="frame" x="77" y="8" width="29" height="63"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="52"/>
                                             <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text=":" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2rJ-I1-h2i">
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text=":" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2rJ-I1-h2i">
                                             <rect key="frame" x="107" y="6" width="13" height="57"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="47"/>
                                             <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="45" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jZy-tr-aeM">
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="45" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jZy-tr-aeM">
                                             <rect key="frame" x="122" y="8" width="63" height="63"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="52"/>
                                             <color key="textColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="每天" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RAF-DO-cro">
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="每天" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RAF-DO-cro">
                                             <rect key="frame" x="71" y="67" width="31" height="18"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                             <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                     </subviews>
                                     <constraints>
+                                        <constraint firstItem="jZy-tr-aeM" firstAttribute="top" secondItem="HKM-FY-db7" secondAttribute="top" constant="8" id="12Y-Y4-CmY"/>
+                                        <constraint firstItem="2rJ-I1-h2i" firstAttribute="top" secondItem="HKM-FY-db7" secondAttribute="top" constant="6" id="6M6-LA-TJG"/>
+                                        <constraint firstItem="RAF-DO-cro" firstAttribute="leading" secondItem="gi5-qg-Aq9" secondAttribute="trailing" constant="18" id="7MX-cW-rp8"/>
                                         <constraint firstAttribute="bottom" secondItem="JS9-91-bsx" secondAttribute="bottom" constant="32.5" id="8zI-jr-Fll"/>
+                                        <constraint firstItem="Xi7-Wh-IqC" firstAttribute="top" secondItem="HKM-FY-db7" secondAttribute="top" constant="8" id="Cpo-Ww-AtO"/>
+                                        <constraint firstAttribute="bottom" secondItem="RAF-DO-cro" secondAttribute="bottom" constant="11.33" id="Cra-le-GqU"/>
+                                        <constraint firstItem="2rJ-I1-h2i" firstAttribute="leading" secondItem="HfK-Ey-xPj" secondAttribute="trailing" constant="25.670000000000002" id="HuY-kL-ikT"/>
+                                        <constraint firstItem="HfK-Ey-xPj" firstAttribute="leading" secondItem="gi5-qg-Aq9" secondAttribute="trailing" constant="3" id="Irb-Rx-Z0l"/>
+                                        <constraint firstItem="gi5-qg-Aq9" firstAttribute="top" secondItem="WgJ-38-wv9" secondAttribute="bottom" constant="4" id="Ivi-mQ-XiZ"/>
+                                        <constraint firstItem="jZy-tr-aeM" firstAttribute="leading" secondItem="2rJ-I1-h2i" secondAttribute="trailing" constant="2" id="J2U-oN-Itp"/>
                                         <constraint firstItem="JS9-91-bsx" firstAttribute="top" secondItem="HKM-FY-db7" secondAttribute="top" constant="32.5" id="V25-Nt-GhX"/>
+                                        <constraint firstItem="RAF-DO-cro" firstAttribute="top" secondItem="HKM-FY-db7" secondAttribute="top" constant="67" id="YT7-XN-cZ2"/>
+                                        <constraint firstAttribute="bottom" secondItem="HfK-Ey-xPj" secondAttribute="bottom" constant="13.5" id="Ybr-dQ-uDS"/>
                                         <constraint firstAttribute="trailing" secondItem="JS9-91-bsx" secondAttribute="trailing" constant="20" id="cWq-Th-h4u"/>
+                                        <constraint firstAttribute="bottom" secondItem="Xi7-Wh-IqC" secondAttribute="bottom" constant="25.329999999999998" id="chb-z4-9Ts"/>
+                                        <constraint firstItem="Xi7-Wh-IqC" firstAttribute="leading" secondItem="WgJ-38-wv9" secondAttribute="trailing" constant="6" id="fH9-zD-qqC"/>
+                                        <constraint firstItem="WgJ-38-wv9" firstAttribute="leading" secondItem="HKM-FY-db7" secondAttribute="leading" constant="20" id="gOx-3z-l1e"/>
+                                        <constraint firstItem="gi5-qg-Aq9" firstAttribute="leading" secondItem="HKM-FY-db7" secondAttribute="leading" constant="22" id="gl1-hw-Xlg"/>
+                                        <constraint firstItem="WgJ-38-wv9" firstAttribute="top" secondItem="HKM-FY-db7" secondAttribute="top" constant="33" id="kfN-8b-fIE"/>
+                                        <constraint firstAttribute="bottom" secondItem="2rJ-I1-h2i" secondAttribute="bottom" constant="33.329999999999998" id="pci-Mo-vvq"/>
+                                        <constraint firstItem="2rJ-I1-h2i" firstAttribute="leading" secondItem="Xi7-Wh-IqC" secondAttribute="trailing" constant="1" id="wks-eC-Pwj"/>
+                                        <constraint firstAttribute="bottom" secondItem="jZy-tr-aeM" secondAttribute="bottom" constant="25.329999999999998" id="yyS-pX-R6z"/>
                                     </constraints>
                                 </tableViewCellContentView>
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <connections>
+                                    <outlet property="hourLabel" destination="Xi7-Wh-IqC" id="kv6-pn-bqR"/>
+                                    <outlet property="minuteLabel" destination="jZy-tr-aeM" id="Oog-ZF-g6l"/>
+                                    <outlet property="timePointLabel" destination="WgJ-38-wv9" id="SHW-kT-oQZ"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
