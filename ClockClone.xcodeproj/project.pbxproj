@@ -14,6 +14,7 @@
 		1609F6D7235E90EB00E18B85 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1609F6D5235E90EB00E18B85 /* LaunchScreen.storyboard */; };
 		1609F6DF235EA14700E18B85 /* Clock.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1609F6DE235EA14700E18B85 /* Clock.storyboard */; };
 		1609F6E1235EB0B100E18B85 /* ClockTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1609F6E0235EB0B100E18B85 /* ClockTableViewController.swift */; };
+		163ED5D0235FED6C00C8B2E0 /* ClockSetting.swift in Sources */ = {isa = PBXBuildFile; fileRef = 163ED5CF235FED6C00C8B2E0 /* ClockSetting.swift */; };
 		16A37BE3235ED9A2001C4901 /* AddClockViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16A37BE2235ED9A2001C4901 /* AddClockViewController.swift */; };
 		16A37BE5235EFD5C001C4901 /* ClockTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16A37BE4235EFD5C001C4901 /* ClockTableViewCell.swift */; };
 /* End PBXBuildFile section */
@@ -28,6 +29,7 @@
 		1609F6D8235E90EB00E18B85 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1609F6DE235EA14700E18B85 /* Clock.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Clock.storyboard; sourceTree = "<group>"; };
 		1609F6E0235EB0B100E18B85 /* ClockTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClockTableViewController.swift; sourceTree = "<group>"; };
+		163ED5CF235FED6C00C8B2E0 /* ClockSetting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClockSetting.swift; sourceTree = "<group>"; };
 		16A37BE2235ED9A2001C4901 /* AddClockViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddClockViewController.swift; sourceTree = "<group>"; };
 		16A37BE4235EFD5C001C4901 /* ClockTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClockTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -64,16 +66,41 @@
 			children = (
 				1609F6CA235E90EB00E18B85 /* AppDelegate.swift */,
 				1609F6CC235E90EB00E18B85 /* SceneDelegate.swift */,
-				1609F6E0235EB0B100E18B85 /* ClockTableViewController.swift */,
-				16A37BE4235EFD5C001C4901 /* ClockTableViewCell.swift */,
-				16A37BE2235ED9A2001C4901 /* AddClockViewController.swift */,
-				1609F6D0235E90EB00E18B85 /* Main.storyboard */,
-				1609F6DE235EA14700E18B85 /* Clock.storyboard */,
+				163ED5D1235FED7100C8B2E0 /* Model */,
+				163ED5CD235FEC6B00C8B2E0 /* VIew */,
+				163ED5CE235FEC7C00C8B2E0 /* Controller */,
 				1609F6D3235E90EB00E18B85 /* Assets.xcassets */,
-				1609F6D5235E90EB00E18B85 /* LaunchScreen.storyboard */,
 				1609F6D8235E90EB00E18B85 /* Info.plist */,
 			);
 			path = ClockClone;
+			sourceTree = "<group>";
+		};
+		163ED5CD235FEC6B00C8B2E0 /* VIew */ = {
+			isa = PBXGroup;
+			children = (
+				1609F6D0235E90EB00E18B85 /* Main.storyboard */,
+				1609F6DE235EA14700E18B85 /* Clock.storyboard */,
+			);
+			path = VIew;
+			sourceTree = "<group>";
+		};
+		163ED5CE235FEC7C00C8B2E0 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				1609F6E0235EB0B100E18B85 /* ClockTableViewController.swift */,
+				16A37BE4235EFD5C001C4901 /* ClockTableViewCell.swift */,
+				16A37BE2235ED9A2001C4901 /* AddClockViewController.swift */,
+				1609F6D5235E90EB00E18B85 /* LaunchScreen.storyboard */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		163ED5D1235FED7100C8B2E0 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				163ED5CF235FED6C00C8B2E0 /* ClockSetting.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -149,6 +176,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				1609F6E1235EB0B100E18B85 /* ClockTableViewController.swift in Sources */,
+				163ED5D0235FED6C00C8B2E0 /* ClockSetting.swift in Sources */,
 				16A37BE5235EFD5C001C4901 /* ClockTableViewCell.swift in Sources */,
 				1609F6CB235E90EB00E18B85 /* AppDelegate.swift in Sources */,
 				1609F6CD235E90EB00E18B85 /* SceneDelegate.swift in Sources */,
