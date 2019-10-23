@@ -17,7 +17,7 @@ class ClockTableViewController: UITableViewController {
         editButtonItem.title = "編輯"
         editButtonItem.tintColor = .orange
         
-        tableView.separatorColor = UIColor.lightGray
+        tableView.tableFooterView = UIView()
     }
     
     @IBAction func addNewClock(_ sender: UIBarButtonItem) {
