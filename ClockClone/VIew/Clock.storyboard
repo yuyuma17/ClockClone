@@ -10,7 +10,7 @@
         <!--鬧鐘-->
         <scene sceneID="dC2-uh-oI8">
             <objects>
-                <tableViewController id="ZPy-wf-jta" customClass="ClockTableViewController" customModule="時鐘" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController storyboardIdentifier="mainVC" id="ZPy-wf-jta" customClass="ClockTableViewController" customModule="時鐘" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="UUA-rl-MPG">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -18,53 +18,62 @@
                         <color key="separatorColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="ClockCell" id="tHM-gt-xjg" customClass="ClockTableViewCell" customModule="時鐘" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="28" width="414" height="96.333335876464844"/>
+                                <rect key="frame" x="0.0" y="28" width="414" height="96"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="tHM-gt-xjg" id="HKM-FY-db7">
-                                    <rect key="frame" x="0.0" y="0.0" width="414" height="96.333335876464844"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="96"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="JS9-91-bsx">
-                                            <rect key="frame" x="345" y="32.666666666666664" width="51" height="31.333333333333336"/>
+                                            <rect key="frame" x="345" y="32.666666666666664" width="51" height="31"/>
                                         </switch>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="鬧鐘" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gi5-qg-Aq9">
                                             <rect key="frame" x="22" y="67" width="31" height="18"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="18" id="mMt-mj-RE9"/>
+                                            </constraints>
                                             <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                             <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="，" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HfK-Ey-xPj">
-                                            <rect key="frame" x="56.000000000000007" y="53" width="25.333333333333336" height="30"/>
+                                            <rect key="frame" x="56.000000000000007" y="53.333333333333336" width="25.333333333333336" height="29.333333333333336"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                             <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="上午" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WgJ-38-wv9">
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="上午" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WgJ-38-wv9">
                                             <rect key="frame" x="20" y="33" width="51" height="30"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="51" id="FKa-Je-JSQ"/>
+                                            </constraints>
                                             <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                             <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="7" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Xi7-Wh-IqC">
-                                            <rect key="frame" x="77" y="8" width="29" height="63"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="7" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Xi7-Wh-IqC">
+                                            <rect key="frame" x="77" y="7.9999999999999964" width="29" height="62.666666666666657"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="52"/>
                                             <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text=":" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2rJ-I1-h2i">
-                                            <rect key="frame" x="107" y="6" width="13" height="57"/>
+                                            <rect key="frame" x="107" y="5.9999999999999964" width="13" height="56.666666666666657"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="47"/>
                                             <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="45" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jZy-tr-aeM">
-                                            <rect key="frame" x="122" y="8" width="63" height="63"/>
+                                            <rect key="frame" x="122" y="7.9999999999999964" width="63" height="62.666666666666657"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="52"/>
                                             <color key="textColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="每天" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RAF-DO-cro">
                                             <rect key="frame" x="71" y="67" width="31" height="18"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="31" id="4aJ-nS-RYA"/>
+                                            </constraints>
                                             <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                             <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <nil key="highlightedColor"/>
@@ -74,13 +83,15 @@
                                         <constraint firstItem="jZy-tr-aeM" firstAttribute="top" secondItem="HKM-FY-db7" secondAttribute="top" constant="8" id="12Y-Y4-CmY"/>
                                         <constraint firstItem="2rJ-I1-h2i" firstAttribute="top" secondItem="HKM-FY-db7" secondAttribute="top" constant="6" id="6M6-LA-TJG"/>
                                         <constraint firstItem="RAF-DO-cro" firstAttribute="leading" secondItem="gi5-qg-Aq9" secondAttribute="trailing" constant="18" id="7MX-cW-rp8"/>
+                                        <constraint firstItem="gi5-qg-Aq9" firstAttribute="centerY" secondItem="RAF-DO-cro" secondAttribute="centerY" id="8sK-9y-J3K"/>
                                         <constraint firstAttribute="bottom" secondItem="JS9-91-bsx" secondAttribute="bottom" constant="32.5" id="8zI-jr-Fll"/>
                                         <constraint firstItem="Xi7-Wh-IqC" firstAttribute="top" secondItem="HKM-FY-db7" secondAttribute="top" constant="8" id="Cpo-Ww-AtO"/>
                                         <constraint firstAttribute="bottom" secondItem="RAF-DO-cro" secondAttribute="bottom" constant="11.33" id="Cra-le-GqU"/>
-                                        <constraint firstItem="2rJ-I1-h2i" firstAttribute="leading" secondItem="HfK-Ey-xPj" secondAttribute="trailing" constant="25.670000000000002" id="HuY-kL-ikT"/>
+                                        <constraint firstItem="WgJ-38-wv9" firstAttribute="centerY" secondItem="JS9-91-bsx" secondAttribute="centerY" id="Gdc-SM-KY1"/>
                                         <constraint firstItem="HfK-Ey-xPj" firstAttribute="leading" secondItem="gi5-qg-Aq9" secondAttribute="trailing" constant="3" id="Irb-Rx-Z0l"/>
                                         <constraint firstItem="gi5-qg-Aq9" firstAttribute="top" secondItem="WgJ-38-wv9" secondAttribute="bottom" constant="4" id="Ivi-mQ-XiZ"/>
                                         <constraint firstItem="jZy-tr-aeM" firstAttribute="leading" secondItem="2rJ-I1-h2i" secondAttribute="trailing" constant="2" id="J2U-oN-Itp"/>
+                                        <constraint firstItem="HfK-Ey-xPj" firstAttribute="top" secondItem="HKM-FY-db7" secondAttribute="topMargin" constant="42.333333333333343" id="J8g-qo-HAb"/>
                                         <constraint firstItem="JS9-91-bsx" firstAttribute="top" secondItem="HKM-FY-db7" secondAttribute="top" constant="32.5" id="V25-Nt-GhX"/>
                                         <constraint firstItem="RAF-DO-cro" firstAttribute="top" secondItem="HKM-FY-db7" secondAttribute="top" constant="67" id="YT7-XN-cZ2"/>
                                         <constraint firstAttribute="bottom" secondItem="HfK-Ey-xPj" secondAttribute="bottom" constant="13.5" id="Ybr-dQ-uDS"/>
@@ -92,14 +103,13 @@
                                         <constraint firstItem="WgJ-38-wv9" firstAttribute="top" secondItem="HKM-FY-db7" secondAttribute="top" constant="33" id="kfN-8b-fIE"/>
                                         <constraint firstAttribute="bottom" secondItem="2rJ-I1-h2i" secondAttribute="bottom" constant="33.329999999999998" id="pci-Mo-vvq"/>
                                         <constraint firstItem="2rJ-I1-h2i" firstAttribute="leading" secondItem="Xi7-Wh-IqC" secondAttribute="trailing" constant="1" id="wks-eC-Pwj"/>
+                                        <constraint firstAttribute="bottomMargin" secondItem="gi5-qg-Aq9" secondAttribute="bottom" constant="-2.5431315151536182e-06" id="ybR-Fp-Fpa"/>
                                         <constraint firstAttribute="bottom" secondItem="jZy-tr-aeM" secondAttribute="bottom" constant="25.329999999999998" id="yyS-pX-R6z"/>
                                     </constraints>
                                 </tableViewCellContentView>
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <connections>
-                                    <outlet property="hourLabel" destination="Xi7-Wh-IqC" id="kv6-pn-bqR"/>
-                                    <outlet property="minuteLabel" destination="jZy-tr-aeM" id="Oog-ZF-g6l"/>
-                                    <outlet property="timePointLabel" destination="WgJ-38-wv9" id="SHW-kT-oQZ"/>
+                                    <outlet property="hourLabel" destination="Xi7-Wh-IqC" id="Jue-LP-Ba2"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -113,8 +123,7 @@
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="JyK-yP-caC">
                             <color key="tintColor" red="1" green="0.57810515169999999" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <connections>
-                                <action selector="addNewClock:" destination="ZPy-wf-jta" id="Dqd-OH-WQd"/>
-                                <segue destination="jgt-10-J95" kind="presentation" id="Nbt-mN-Gbs"/>
+                                <action selector="toAddNewClockPage:" destination="ZPy-wf-jta" id="Dqd-OH-WQd"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -127,9 +136,9 @@
         <!--加入鬧鐘-->
         <scene sceneID="r04-4c-KEX">
             <objects>
-                <viewController id="ijS-Yy-e3P" customClass="AddClockViewController" customModule="時鐘" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="addVC" id="ijS-Yy-e3P" customClass="AddClockViewController" customModule="時鐘" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="mUL-aH-qr2">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="660"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="692"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="time" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="Qcg-0X-ycS">
@@ -180,7 +189,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="37a-ba-ojx" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1795.6521739130437" y="-59.510869565217398"/>
+            <point key="canvasLocation" x="1783" y="-60"/>
         </scene>
         <!--Setting Table View Controller-->
         <scene sceneID="bDY-JI-0VD">
@@ -337,7 +346,7 @@
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="jgt-10-J95" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" translucent="NO" id="BGP-jc-u0e">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="56"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="barTintColor" red="0.17254901960784313" green="0.17254901960784313" blue="0.17254901960784313" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <textAttributes key="titleTextAttributes">

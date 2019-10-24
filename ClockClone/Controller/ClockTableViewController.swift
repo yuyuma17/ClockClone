@@ -8,8 +8,10 @@
 
 import UIKit
 
-class ClockTableViewController: UITableViewController {
-
+class ClockTableViewController: UITableViewController, GetTimeData {
+    
+    var hourArray = ["1", "2", "3", "4", "5"]
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -20,16 +22,31 @@ class ClockTableViewController: UITableViewController {
         tableView.tableFooterView = UIView()
     }
     
-    @IBAction func addNewClock(_ sender: UIBarButtonItem) {
+    @IBAction func toAddNewClockPage(_ sender: UIBarButtonItem) {
+        let secondVC = UIStoryboard(name: "Clock", bundle: nil).instantiateViewController(withIdentifier: "addVC") as! AddClockViewController
+        secondVC.getTimeDelegate = self
+        let navController = UINavigationController(rootViewController: secondVC)
+        navController.navigationBar.barTintColor = UIColor(red: 44.0 / 255.0, green: 44.0 / 255.0, blue: 44.0 / 255.0, alpha: 100)
+        
+        let textAttributes = [NSAttributedString.Key.foregroundColor: UIColor.white]
+        navController.navigationBar.titleTextAttributes = textAttributes
+        present(navController, animated: true, completion: nil)
+    }
+    
+    func receiveTimeData(time: String) {
+        hourArray.append(time)
+        tableView.reloadData()
+        print(hourArray)
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 5
+        return hourArray.count
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "ClockCell", for: indexPath) as! ClockTableViewCell
+        cell.hourLabel.text = hourArray[indexPath.row]
         return cell
     }
 
@@ -49,20 +66,4 @@ class ClockTableViewController: UITableViewController {
             editButtonItem.tintColor = .orange
         }
     }
-
-
-
-    // Override to support editing the table view.
-//    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
-//        if editingStyle == .delete {
-//            // Delete the row from the data source
-//            tableView.deleteRows(at: [indexPath], with: .fade)
-//        } else if editingStyle == .insert {
-//            // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-//        }
-//    }
-
-
-
-
 }
