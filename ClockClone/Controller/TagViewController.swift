@@ -8,9 +8,15 @@
 
 import UIKit
 
+protocol GetTagData {
+    func receiveTagData(tag: String)
+}
+
 class TagViewController: UIViewController {
 
     @IBOutlet weak var tagTextField: UITextField!
+    
+    var getTagDelegate: GetTagData?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -22,6 +28,11 @@ class TagViewController: UIViewController {
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         tagTextField.becomeFirstResponder()
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        getTagDelegate?.receiveTagData(tag: tagTextField.text!)
     }
     
     func reviseBackButton(){

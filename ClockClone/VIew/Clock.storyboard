@@ -267,7 +267,7 @@
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" red="0.17254901959999999" green="0.17254901959999999" blue="0.17254901959999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <connections>
-                                            <segue destination="S7d-0r-BVJ" kind="show" id="rI2-Hn-ZBT"/>
+                                            <segue destination="S7d-0r-BVJ" kind="show" id="Cvw-2a-7Te"/>
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="UXE-Kv-A8f">
@@ -343,6 +343,7 @@
                     </tableView>
                     <connections>
                         <outlet property="repeatOptionCell" destination="agb-7w-G4x" id="7a4-Nz-85o"/>
+                        <outlet property="tagLabel" destination="QPE-Ih-FlF" id="ANs-pO-hkB"/>
                         <outlet property="tagOptionCell" destination="wHW-Df-yxg" id="A9I-Ft-U89"/>
                         <outlet property="voiceOptionCell" destination="UXE-Kv-A8f" id="SpT-cf-xQC"/>
                     </connections>
@@ -387,7 +388,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1hI-zB-rmM" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3367" y="-392"/>
+            <point key="canvasLocation" x="3367" y="-304"/>
         </scene>
         <!--標籤-->
         <scene sceneID="1so-DZ-mqe">
@@ -398,10 +399,10 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="鬧鐘" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="HdN-uG-Pn6">
-                                <rect key="frame" x="0.0" y="120" width="414" height="40"/>
+                                <rect key="frame" x="0.0" y="156" width="414" height="45"/>
                                 <color key="backgroundColor" red="0.17254901960784313" green="0.17254901960784313" blue="0.17254901960784313" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="40" id="A2y-9T-HP0"/>
+                                    <constraint firstAttribute="height" constant="45" id="A2y-9T-HP0"/>
                                 </constraints>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="15"/>
@@ -412,7 +413,7 @@
                         <constraints>
                             <constraint firstItem="CD0-ni-WGG" firstAttribute="trailing" secondItem="HdN-uG-Pn6" secondAttribute="trailing" id="0Kl-BW-MaM"/>
                             <constraint firstItem="HdN-uG-Pn6" firstAttribute="leading" secondItem="CD0-ni-WGG" secondAttribute="leading" id="Xew-mf-HKG"/>
-                            <constraint firstItem="HdN-uG-Pn6" firstAttribute="top" secondItem="CD0-ni-WGG" secondAttribute="top" constant="120" id="bRW-7N-Pwy"/>
+                            <constraint firstItem="HdN-uG-Pn6" firstAttribute="top" secondItem="CD0-ni-WGG" secondAttribute="top" constant="156" id="bRW-7N-Pwy"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="CD0-ni-WGG"/>
                     </view>
@@ -423,7 +424,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="96d-V8-eKJ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3367" y="-30"/>
+            <point key="canvasLocation" x="3367" y="-60"/>
         </scene>
         <!--提示聲-->
         <scene sceneID="8kK-aC-I2Y">
@@ -439,7 +440,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="LFP-Sk-ghL" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3367" y="283"/>
+            <point key="canvasLocation" x="3367" y="188"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="EO1-cz-EXR">

@@ -8,11 +8,12 @@
 
 import UIKit
 
-class SettingTableViewController: UITableViewController {
-
+class SettingTableViewController: UITableViewController, GetTagData {
+    
     @IBOutlet weak var repeatOptionCell: UITableViewCell!
     @IBOutlet weak var tagOptionCell: UITableViewCell!
     @IBOutlet weak var voiceOptionCell: UITableViewCell!
+    @IBOutlet weak var tagLabel: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -23,11 +24,21 @@ class SettingTableViewController: UITableViewController {
         tagOptionCell.accessoryView = setAccessoryView() as? UIView
         voiceOptionCell.accessoryView = setAccessoryView() as? UIView
     }
-    
+
     func setAccessoryView() -> Any {
         let indicator = UIImageView(frame: CGRect(x: 0, y: 0, width: 10, height: 16))
         indicator.image = UIImage(named: "indicator")
         return indicator
     }
+    
+    func receiveTagData(tag: String) {
+        tagLabel.text = tag
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let destinationViewController = segue.destination as? TagViewController
+        destinationViewController?.getTagDelegate = self
+    }
+    
 
 }
