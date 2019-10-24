@@ -255,6 +255,11 @@
                             <outlet property="delegate" destination="lPv-Qo-jLR" id="3D8-wC-rUl"/>
                         </connections>
                     </tableView>
+                    <connections>
+                        <outlet property="repeatOptionCell" destination="agb-7w-G4x" id="7a4-Nz-85o"/>
+                        <outlet property="tagOptionCell" destination="wHW-Df-yxg" id="A9I-Ft-U89"/>
+                        <outlet property="voiceOptionCell" destination="UXE-Kv-A8f" id="SpT-cf-xQC"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="RJs-3J-HrR" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
