@@ -17,10 +17,12 @@ class TagViewController: UIViewController {
     @IBOutlet weak var tagTextField: UITextField!
     
     var getTagDelegate: GetTagData?
+    var tagText = "鬧鐘"
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        tagTextField.text = tagText
         reviseBackButton()
         reviseLeftPadding()
     }
