@@ -10,7 +10,8 @@ import UIKit
 
 class ClockTableViewController: UITableViewController, GetTimeData {
     
-    var hourArray = ["1", "2", "3", "4", "5"]
+    var hourArray = ["2", "3", "3"]
+    var minuteArray = ["56", "32", "56"]
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -30,10 +31,10 @@ class ClockTableViewController: UITableViewController, GetTimeData {
         present(addVCNaviController, animated: true, completion: nil)
     }
     
-    func receiveTimeData(time: String) {
-        hourArray.append(time)
+    func receiveTimeData(hour: String, minute: String) {
+        hourArray.append(hour)
+        minuteArray.append(minute)
         tableView.reloadData()
-        print(hourArray)
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -44,6 +45,7 @@ class ClockTableViewController: UITableViewController, GetTimeData {
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "ClockCell", for: indexPath) as! ClockTableViewCell
         cell.hourLabel.text = hourArray[indexPath.row]
+        cell.minuteLabel.text = minuteArray[indexPath.row]
         return cell
     }
 

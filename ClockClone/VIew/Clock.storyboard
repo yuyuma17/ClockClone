@@ -53,23 +53,26 @@
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="7" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Xi7-Wh-IqC">
-                                            <rect key="frame" x="77" y="8.0000000000000036" width="32" height="63.333333333333343"/>
+                                            <rect key="frame" x="77" y="8.0000000000000036" width="33" height="63.333333333333343"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="63" id="SrN-zx-kkA"/>
-                                                <constraint firstAttribute="width" constant="32" id="de6-WY-Zgz"/>
+                                                <constraint firstAttribute="width" constant="33" id="de6-WY-Zgz"/>
                                             </constraints>
                                             <fontDescription key="fontDescription" type="system" weight="thin" pointSize="52"/>
                                             <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text=":" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2rJ-I1-h2i">
-                                            <rect key="frame" x="110" y="6.0000000000000036" width="13" height="57.333333333333343"/>
+                                            <rect key="frame" x="111" y="6.0000000000000036" width="13" height="57.333333333333343"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="47"/>
                                             <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="45" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jZy-tr-aeM">
-                                            <rect key="frame" x="124.99999999999999" y="8.0000000000000036" width="60.333333333333329" height="63.333333333333343"/>
+                                            <rect key="frame" x="126" y="8.0000000000000036" width="63" height="63.333333333333343"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="63" id="h9q-Is-KYn"/>
+                                            </constraints>
                                             <fontDescription key="fontDescription" type="system" weight="thin" pointSize="52"/>
                                             <color key="textColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <nil key="highlightedColor"/>
@@ -108,7 +111,9 @@
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <connections>
                                     <outlet property="hourLabel" destination="Xi7-Wh-IqC" id="Jue-LP-Ba2"/>
+                                    <outlet property="minuteLabel" destination="jZy-tr-aeM" id="tMP-bM-Xq9"/>
                                     <outlet property="switchOnAndOff" destination="JS9-91-bsx" id="iUf-69-ZU3"/>
+                                    <outlet property="timePointLabel" destination="WgJ-38-wv9" id="INO-Sl-QWM"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>

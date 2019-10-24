@@ -11,6 +11,8 @@ import UIKit
 class ClockTableViewCell: UITableViewCell {
 
     @IBOutlet weak var hourLabel: UILabel!
+    @IBOutlet weak var minuteLabel: UILabel!
+    @IBOutlet weak var timePointLabel: UILabel!
     @IBOutlet weak var switchOnAndOff: UISwitch!
     
     override func awakeFromNib() {

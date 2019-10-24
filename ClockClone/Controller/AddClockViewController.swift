@@ -9,13 +9,14 @@
 import UIKit
 
 protocol GetTimeData {
-    func receiveTimeData(time: String)
+    func receiveTimeData(hour: String, minute: String)
 }
 
 class AddClockViewController: UIViewController {
 
     @IBOutlet weak var timePicker: UIDatePicker!
     
+    lazy var time = timePicker.date
     var getTimeDelegate: GetTimeData?
     
     override func viewDidLoad() {
@@ -28,16 +29,22 @@ class AddClockViewController: UIViewController {
     }
     
     @IBAction func saveNewClock(_ sender: UIBarButtonItem) {
-        getTimeDelegate?.receiveTimeData(time: getPickerHour())
+        getTimeDelegate?.receiveTimeData(hour: getPickerHour(), minute: getPickerMinute())
         dismiss(animated: true, completion: nil)
     }
     
     func getPickerHour() -> String {
-        let time = timePicker.date
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "H"
         let hour = dateFormatter.string(from: time)
         return hour
+    }
+    
+    func getPickerMinute() -> String {
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "mm"
+        let minute = dateFormatter.string(from: time)
+        return minute
     }
     
     func revisePickerTextAndLineColor() {
