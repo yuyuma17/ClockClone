@@ -396,10 +396,30 @@
                     <view key="view" contentMode="scaleToFill" id="UY9-jv-xKS">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="180"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="鬧鐘" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="HdN-uG-Pn6">
+                                <rect key="frame" x="0.0" y="120" width="414" height="40"/>
+                                <color key="backgroundColor" red="0.17254901960784313" green="0.17254901960784313" blue="0.17254901960784313" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="A2y-9T-HP0"/>
+                                </constraints>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                        </subviews>
                         <color key="backgroundColor" red="0.12984204290000001" green="0.12984612579999999" blue="0.12984395030000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="CD0-ni-WGG" firstAttribute="trailing" secondItem="HdN-uG-Pn6" secondAttribute="trailing" id="0Kl-BW-MaM"/>
+                            <constraint firstItem="HdN-uG-Pn6" firstAttribute="leading" secondItem="CD0-ni-WGG" secondAttribute="leading" id="Xew-mf-HKG"/>
+                            <constraint firstItem="HdN-uG-Pn6" firstAttribute="top" secondItem="CD0-ni-WGG" secondAttribute="top" constant="120" id="bRW-7N-Pwy"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="CD0-ni-WGG"/>
                     </view>
                     <navigationItem key="navigationItem" title="標籤" id="cLh-zx-yOR"/>
+                    <connections>
+                        <outlet property="tagTextField" destination="HdN-uG-Pn6" id="8Rh-7b-Cob"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="96d-V8-eKJ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
