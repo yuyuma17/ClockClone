@@ -1,5 +1,5 @@
 //
-//  RepeatOptionViewController.swift
+//  TagViewController.swift
 //  ClockClone
 //
 //  Created by 黃士軒 on 2019/10/24.
@@ -8,8 +8,8 @@
 
 import UIKit
 
-class RepeatOptionViewController: UIViewController {
-    
+class TagViewController: UIViewController {
+
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -23,5 +23,6 @@ class RepeatOptionViewController: UIViewController {
         backButton.title = "返回"
         self.navigationController?.navigationBar.topItem?.backBarButtonItem = backButton
     }
-    
+
+
 }

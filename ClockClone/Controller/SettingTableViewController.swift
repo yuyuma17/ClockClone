@@ -24,8 +24,6 @@ class SettingTableViewController: UITableViewController {
         voiceOptionCell.accessoryView = setAccessoryView() as? UIView
     }
     
-
-    
     func setAccessoryView() -> Any {
         let indicator = UIImageView(frame: CGRect(x: 0, y: 0, width: 10, height: 16))
         indicator.image = UIImage(named: "indicator")

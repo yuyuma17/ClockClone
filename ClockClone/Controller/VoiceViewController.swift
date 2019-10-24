@@ -1,5 +1,5 @@
 //
-//  RepeatOptionViewController.swift
+//  VoiceViewController.swift
 //  ClockClone
 //
 //  Created by 黃士軒 on 2019/10/24.
@@ -8,11 +8,11 @@
 
 import UIKit
 
-class RepeatOptionViewController: UIViewController {
-    
+class VoiceViewController: UIViewController {
+
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+
         reviseBackButton()
     }
     
@@ -23,5 +23,5 @@ class RepeatOptionViewController: UIViewController {
         backButton.title = "返回"
         self.navigationController?.navigationBar.topItem?.backBarButtonItem = backButton
     }
-    
+
 }
