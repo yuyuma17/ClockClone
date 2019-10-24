@@ -35,7 +35,7 @@ class AddClockViewController: UIViewController {
     func getPickerHour() -> String {
         let time = timePicker.date
         let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "HH"
+        dateFormatter.dateFormat = "H"
         let hour = dateFormatter.string(from: time)
         return hour
     }

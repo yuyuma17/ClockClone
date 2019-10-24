@@ -23,14 +23,11 @@ class ClockTableViewController: UITableViewController, GetTimeData {
     }
     
     @IBAction func toAddNewClockPage(_ sender: UIBarButtonItem) {
-        let secondVC = UIStoryboard(name: "Clock", bundle: nil).instantiateViewController(withIdentifier: "addVC") as! AddClockViewController
-        secondVC.getTimeDelegate = self
-        let navController = UINavigationController(rootViewController: secondVC)
-        navController.navigationBar.barTintColor = UIColor(red: 44.0 / 255.0, green: 44.0 / 255.0, blue: 44.0 / 255.0, alpha: 100)
+        let addVCNaviController = UIStoryboard(name: "Clock", bundle: nil).instantiateViewController(withIdentifier: "addVC") as! UINavigationController
+        let addVC = addVCNaviController.viewControllers.first as? AddClockViewController
+        addVC?.getTimeDelegate = self
         
-        let textAttributes = [NSAttributedString.Key.foregroundColor: UIColor.white]
-        navController.navigationBar.titleTextAttributes = textAttributes
-        present(navController, animated: true, completion: nil)
+        present(addVCNaviController, animated: true, completion: nil)
     }
     
     func receiveTimeData(time: String) {
