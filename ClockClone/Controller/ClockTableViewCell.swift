@@ -11,6 +11,7 @@ import UIKit
 class ClockTableViewCell: UITableViewCell {
 
     @IBOutlet weak var hourLabel: UILabel!
+    @IBOutlet weak var switchOnAndOff: UISwitch!
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -19,5 +20,6 @@ class ClockTableViewCell: UITableViewCell {
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
     }
+
 
 }
