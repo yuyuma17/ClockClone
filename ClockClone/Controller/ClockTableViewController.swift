@@ -10,8 +10,8 @@ import UIKit
 
 class ClockTableViewController: UITableViewController, GetTimeData {
     
-    var hourArray = ["2", "3", "3"]
-    var minuteArray = ["56", "32", "56"]
+    var hourArray = ["9", "9", "9"]
+    var minuteArray = ["22", "23", "24"]
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -40,7 +40,7 @@ class ClockTableViewController: UITableViewController, GetTimeData {
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return hourArray.count
     }
-
+    
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "ClockCell", for: indexPath) as! ClockTableViewCell
@@ -48,7 +48,7 @@ class ClockTableViewController: UITableViewController, GetTimeData {
         cell.minuteLabel.text = minuteArray[indexPath.row]
         return cell
     }
-
+    
     // Override to support conditional editing of the table view.
     override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
         return true
@@ -64,5 +64,33 @@ class ClockTableViewController: UITableViewController, GetTimeData {
             editButtonItem.title = "編輯"
             editButtonItem.tintColor = .orange
         }
+    }
+    
+    override func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]? {
+        
+        let deleteAction = UITableViewRowAction(style: UITableViewRowAction.Style.default, title: "刪除") { (UITableViewRowAction, IndexPath) in
+            
+            self.hourArray.remove(at: indexPath.row)
+            self.minuteArray.remove(at: indexPath.row)
+            self.tableView.reloadData()
+        }
+        return [deleteAction]
+    }
+    
+    func setClockAlarm(hour: Int, minute: Int) {
+        
+        let content = UNMutableNotificationContent()
+        
+        content.body = "鬧鐘"
+        content.sound = UNNotificationSound.default
+        
+        var date = DateComponents()
+        date.hour = hour
+        date.minute = minute
+        
+        let trigger = UNCalendarNotificationTrigger(dateMatching: date, repeats: false)
+        let request = UNNotificationRequest(identifier: "notification", content: content, trigger: trigger)
+        
+        UNUserNotificationCenter.current().add(request, withCompletionHandler: nil)
     }
 }
