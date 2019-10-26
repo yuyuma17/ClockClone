@@ -34,6 +34,7 @@ class SettingTableViewController: UITableViewController, GetTagData, GetSelected
     
     func receiveTagData(tag: String) {
         tagLabel.text = tag
+        print(tag)
     }
     
     func receiveSelectedDaysData(days: String) {

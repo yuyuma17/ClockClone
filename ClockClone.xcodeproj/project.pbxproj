@@ -88,6 +88,7 @@
 			children = (
 				1609F6D0235E90EB00E18B85 /* Main.storyboard */,
 				1609F6DE235EA14700E18B85 /* Clock.storyboard */,
+				1609F6D5235E90EB00E18B85 /* LaunchScreen.storyboard */,
 			);
 			path = VIew;
 			sourceTree = "<group>";
@@ -102,7 +103,6 @@
 				16A51F3823617F7200A45B48 /* RepeatOptionViewController.swift */,
 				169C24B8236195DB0003EB28 /* TagViewController.swift */,
 				169C24BA2361962F0003EB28 /* VoiceViewController.swift */,
-				1609F6D5235E90EB00E18B85 /* LaunchScreen.storyboard */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
