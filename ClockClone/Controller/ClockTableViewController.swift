@@ -69,16 +69,16 @@ class ClockTableViewController: UITableViewController, GetTimeData {
         }
     }
     
-    // TODO
-    override func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]? {
+    // 取代 editActionsForRowAt 實作刪除按鈕
+    override func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
         
-        let deleteAction = UITableViewRowAction(style: UITableViewRowAction.Style.default, title: "刪除") { (UITableViewRowAction, IndexPath) in
-            
+        let deleteAction = UIContextualAction(style: .destructive, title: "刪除", handler: { (action, view, success) in
             self.hourArray.remove(at: indexPath.row)
             self.minuteArray.remove(at: indexPath.row)
             self.tableView.reloadData()
-        }
-        return [deleteAction]
+        })
+        deleteAction.backgroundColor = .red
+        return UISwipeActionsConfiguration(actions: [deleteAction])
     }
     
     // TODO
