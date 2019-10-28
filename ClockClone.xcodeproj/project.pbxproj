@@ -21,6 +21,7 @@
 		16A37BE3235ED9A2001C4901 /* AddClockViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16A37BE2235ED9A2001C4901 /* AddClockViewController.swift */; };
 		16A51F3923617F7200A45B48 /* RepeatOptionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16A51F3823617F7200A45B48 /* RepeatOptionViewController.swift */; };
 		16C1C412236136E000A5D0D3 /* ClockTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16C1C411236136E000A5D0D3 /* ClockTableViewCell.swift */; };
+		16EBFC3A23669F8A0099208D /* Protocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16EBFC3923669F8A0099208D /* Protocol.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -40,6 +41,7 @@
 		16A37BE2235ED9A2001C4901 /* AddClockViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddClockViewController.swift; sourceTree = "<group>"; };
 		16A51F3823617F7200A45B48 /* RepeatOptionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepeatOptionViewController.swift; sourceTree = "<group>"; };
 		16C1C411236136E000A5D0D3 /* ClockTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClockTableViewCell.swift; sourceTree = "<group>"; };
+		16EBFC3923669F8A0099208D /* Protocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Protocol.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -74,6 +76,7 @@
 			children = (
 				1609F6CA235E90EB00E18B85 /* AppDelegate.swift */,
 				1609F6CC235E90EB00E18B85 /* SceneDelegate.swift */,
+				16EBFC3B23669F950099208D /* Protocol */,
 				163ED5D1235FED7100C8B2E0 /* Model */,
 				163ED5CD235FEC6B00C8B2E0 /* VIew */,
 				163ED5CE235FEC7C00C8B2E0 /* Controller */,
@@ -88,8 +91,8 @@
 			children = (
 				1609F6D0235E90EB00E18B85 /* Main.storyboard */,
 				1609F6DE235EA14700E18B85 /* Clock.storyboard */,
-				16C1C411236136E000A5D0D3 /* ClockTableViewCell.swift */,
 				1609F6D5235E90EB00E18B85 /* LaunchScreen.storyboard */,
+				16C1C411236136E000A5D0D3 /* ClockTableViewCell.swift */,
 			);
 			path = VIew;
 			sourceTree = "<group>";
@@ -113,6 +116,14 @@
 				163ED5CF235FED6C00C8B2E0 /* ClockModel.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		16EBFC3B23669F950099208D /* Protocol */ = {
+			isa = PBXGroup;
+			children = (
+				16EBFC3923669F8A0099208D /* Protocol.swift */,
+			);
+			path = Protocol;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -193,6 +204,7 @@
 				1609F6E1235EB0B100E18B85 /* ClockTableViewController.swift in Sources */,
 				163ED5D0235FED6C00C8B2E0 /* ClockModel.swift in Sources */,
 				169C24BB2361962F0003EB28 /* VoiceViewController.swift in Sources */,
+				16EBFC3A23669F8A0099208D /* Protocol.swift in Sources */,
 				1609F6CB235E90EB00E18B85 /* AppDelegate.swift in Sources */,
 				169C24B9236195DB0003EB28 /* TagViewController.swift in Sources */,
 				1609F6CD235E90EB00E18B85 /* SceneDelegate.swift in Sources */,

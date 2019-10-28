@@ -8,11 +8,6 @@
 
 import UIKit
 
-// TODO
-protocol GetTagData: class {
-    func receiveTagData(tag: String)
-}
-
 class TagViewController: UIViewController {
 
     var tagText = "鬧鐘"

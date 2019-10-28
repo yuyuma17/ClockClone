@@ -8,11 +8,6 @@
 
 import UIKit
 
-// TODO
-protocol GetSelectedDaysData: class {
-    func receiveSelectedDaysData(days: String)
-}
-
 class RepeatOptionViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
     let weekDays = ["星期日", "星期一", "星期二", "星期三", "星期四", "星期五", "星期六"]
