@@ -10,8 +10,7 @@ import UIKit
 
 class ClockTableViewController: UITableViewController, GetTimeData {
     
-    var hourArray = ["9", "9", "9"]
-    var minuteArray = ["22", "23", "24"]
+    var alarmData = AlarmData()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -34,20 +33,20 @@ class ClockTableViewController: UITableViewController, GetTimeData {
     
     // 接收 Delegate 資料並 ReloadData
     func receiveTimeData(hour: String, minute: String) {
-        hourArray.append(hour)
-        minuteArray.append(minute)
+        alarmData.hourArray.append(hour)
+        alarmData.minuteArray.append(minute)
         tableView.reloadData()
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return hourArray.count
+        return alarmData.hourArray.count
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "ClockCell", for: indexPath) as! ClockTableViewCell
-        cell.hourLabel.text = hourArray[indexPath.row]
-        cell.minuteLabel.text = minuteArray[indexPath.row]
+        cell.hourLabel.text = alarmData.hourArray[indexPath.row]
+        cell.minuteLabel.text = alarmData.minuteArray[indexPath.row]
         return cell
     }
     
@@ -73,8 +72,8 @@ class ClockTableViewController: UITableViewController, GetTimeData {
     override func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
         
         let deleteAction = UIContextualAction(style: .destructive, title: "刪除", handler: { (action, view, success) in
-            self.hourArray.remove(at: indexPath.row)
-            self.minuteArray.remove(at: indexPath.row)
+            self.alarmData.hourArray.remove(at: indexPath.row)
+            self.alarmData.minuteArray.remove(at: indexPath.row)
             self.tableView.reloadData()
         })
         deleteAction.backgroundColor = .red

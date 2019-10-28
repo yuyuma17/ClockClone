@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1600F50D2366C4D0006BEC02 /* UserDefault.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1600F50C2366C4D0006BEC02 /* UserDefault.swift */; };
 		1609F6CB235E90EB00E18B85 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1609F6CA235E90EB00E18B85 /* AppDelegate.swift */; };
 		1609F6CD235E90EB00E18B85 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1609F6CC235E90EB00E18B85 /* SceneDelegate.swift */; };
 		1609F6D2235E90EB00E18B85 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1609F6D0235E90EB00E18B85 /* Main.storyboard */; };
@@ -25,6 +26,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1600F50C2366C4D0006BEC02 /* UserDefault.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefault.swift; sourceTree = "<group>"; };
 		1609F6C7235E90EB00E18B85 /* 時鐘.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "時鐘.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		1609F6CA235E90EB00E18B85 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1609F6CC235E90EB00E18B85 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -114,6 +116,7 @@
 			isa = PBXGroup;
 			children = (
 				163ED5CF235FED6C00C8B2E0 /* ClockModel.swift */,
+				1600F50C2366C4D0006BEC02 /* UserDefault.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -206,6 +209,7 @@
 				169C24BB2361962F0003EB28 /* VoiceViewController.swift in Sources */,
 				16EBFC3A23669F8A0099208D /* Protocol.swift in Sources */,
 				1609F6CB235E90EB00E18B85 /* AppDelegate.swift in Sources */,
+				1600F50D2366C4D0006BEC02 /* UserDefault.swift in Sources */,
 				169C24B9236195DB0003EB28 /* TagViewController.swift in Sources */,
 				1609F6CD235E90EB00E18B85 /* SceneDelegate.swift in Sources */,
 				16A37BE3235ED9A2001C4901 /* AddClockViewController.swift in Sources */,

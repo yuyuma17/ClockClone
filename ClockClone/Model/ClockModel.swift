@@ -7,3 +7,8 @@
 //
 
 import Foundation
+
+struct AlarmData {
+    var hourArray = ["9"]
+    var minuteArray = ["22"]
+}
