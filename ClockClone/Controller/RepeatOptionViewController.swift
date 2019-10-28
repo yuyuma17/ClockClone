@@ -8,31 +8,33 @@
 
 import UIKit
 
+// TODO
 protocol GetSelectedDaysData: class {
     func receiveSelectedDaysData(days: String)
 }
 
 class RepeatOptionViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
-    @IBOutlet weak var tableview: UITableView!
-    
     let weekDays = ["星期日", "星期一", "星期二", "星期三", "星期四", "星期五", "星期六"]
     var selectedDays: String!
     weak var getDaysDelegate: GetSelectedDaysData?
+    
+    @IBOutlet weak var tableview: UITableView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         tableview.tableFooterView = UIView()
-        reviseBackButton()
+        reviseBackButtonNameAndColor()
     }
     
-    func reviseBackButton(){
-        self.navigationController?.view.tintColor = UIColor.orange
+    func reviseBackButtonNameAndColor() {
         
         let backButton = UIBarButtonItem()
         backButton.title = "返回"
         self.navigationController?.navigationBar.topItem?.backBarButtonItem = backButton
+        
+        self.navigationController?.view.tintColor = UIColor.orange
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
@@ -61,6 +63,7 @@ class RepeatOptionViewController: UIViewController, UITableViewDelegate, UITable
         cell.textLabel?.text = weekDay
         cell.textLabel?.textColor = UIColor.white
         
+        // 在此數再寫一次才能在進去畫面後得到選中的選項（打勾狀態）
         if selectedDays == weekDay {
             cell.accessoryType = .checkmark
         } else {

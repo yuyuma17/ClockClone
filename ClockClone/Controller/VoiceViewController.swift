@@ -13,15 +13,15 @@ class VoiceViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        reviseBackButton()
+        reviseBackButtonNameAndColor()
     }
     
-    func reviseBackButton(){
-        self.navigationController?.view.tintColor = UIColor.orange
+    func reviseBackButtonNameAndColor() {
         
         let backButton = UIBarButtonItem()
         backButton.title = "返回"
         self.navigationController?.navigationBar.topItem?.backBarButtonItem = backButton
+        
+        self.navigationController?.view.tintColor = UIColor.orange
     }
-
 }

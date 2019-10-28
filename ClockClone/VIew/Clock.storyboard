@@ -135,7 +135,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="b2W-uV-03F" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="331.8840579710145" y="-58.695652173913047"/>
+            <point key="canvasLocation" x="319" y="-60"/>
         </scene>
         <!--加入鬧鐘-->
         <scene sceneID="r04-4c-KEX">
@@ -177,13 +177,13 @@
                         <barButtonItem key="leftBarButtonItem" title="取消" id="bxr-wp-xV8">
                             <color key="tintColor" red="1" green="0.57810515169999999" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <connections>
-                                <action selector="cancelAddClock:" destination="ijS-Yy-e3P" id="Fsw-RH-faK"/>
+                                <action selector="cancelAndBackToMainView:" destination="ijS-Yy-e3P" id="Fsw-RH-faK"/>
                             </connections>
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" title="儲存" id="j0t-ee-eVU">
                             <color key="tintColor" red="1" green="0.57810515169999999" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <connections>
-                                <action selector="saveNewClock:" destination="ijS-Yy-e3P" id="7b0-WD-Pj5"/>
+                                <action selector="saveAndAddNewClock:" destination="ijS-Yy-e3P" id="7b0-WD-Pj5"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -193,14 +193,14 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="37a-ba-ojx" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1783" y="-60"/>
+            <point key="canvasLocation" x="1820" y="-60"/>
         </scene>
         <!--Setting Table View Controller-->
         <scene sceneID="bDY-JI-0VD">
             <objects>
                 <tableViewController id="lPv-Qo-jLR" customClass="SettingTableViewController" customModule="時鐘" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" scrollEnabled="NO" dataMode="static" style="plain" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="oXG-LY-aQc">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="180"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" red="0.17254901959999999" green="0.17254901959999999" blue="0.17254901959999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <color key="separatorColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -346,11 +346,12 @@
                             <outlet property="delegate" destination="lPv-Qo-jLR" id="3D8-wC-rUl"/>
                         </connections>
                     </tableView>
+                    <size key="freeformSize" width="414" height="736"/>
                     <connections>
-                        <outlet property="daysLabel" destination="0F8-Cn-j4Q" id="ZQn-cV-kL6"/>
+                        <outlet property="RepeatOptionLabel" destination="0F8-Cn-j4Q" id="ZQn-cV-kL6"/>
                         <outlet property="repeatOptionCell" destination="agb-7w-G4x" id="7a4-Nz-85o"/>
-                        <outlet property="tagLabel" destination="QPE-Ih-FlF" id="ANs-pO-hkB"/>
                         <outlet property="tagOptionCell" destination="wHW-Df-yxg" id="A9I-Ft-U89"/>
+                        <outlet property="tagOptionLabel" destination="QPE-Ih-FlF" id="ANs-pO-hkB"/>
                         <outlet property="voiceOptionCell" destination="UXE-Kv-A8f" id="SpT-cf-xQC"/>
                     </connections>
                 </tableViewController>
@@ -363,7 +364,7 @@
             <objects>
                 <viewController id="1vb-GJ-xCt" customClass="RepeatOptionViewController" customModule="時鐘" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="G5A-fD-eBV">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="180"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="716"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" scrollEnabled="NO" dataMode="prototypes" style="plain" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="afn-BT-85W">
@@ -394,20 +395,21 @@
                         <viewLayoutGuide key="safeArea" id="tIA-kI-Sjp"/>
                     </view>
                     <navigationItem key="navigationItem" title="重複" id="a0p-mL-ZFz"/>
+                    <size key="freeformSize" width="414" height="736"/>
                     <connections>
                         <outlet property="tableview" destination="afn-BT-85W" id="7d1-Nx-kOz"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1hI-zB-rmM" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3366.666666666667" y="-468.75000000000006"/>
+            <point key="canvasLocation" x="3493" y="-760"/>
         </scene>
         <!--標籤-->
         <scene sceneID="1so-DZ-mqe">
             <objects>
                 <viewController id="S7d-0r-BVJ" customClass="TagViewController" customModule="時鐘" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="UY9-jv-xKS">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="301"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="716"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="鬧鐘" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="HdN-uG-Pn6">
@@ -430,30 +432,31 @@
                         <viewLayoutGuide key="safeArea" id="CD0-ni-WGG"/>
                     </view>
                     <navigationItem key="navigationItem" title="標籤" id="cLh-zx-yOR"/>
-                    <size key="freeformSize" width="414" height="301"/>
+                    <size key="freeformSize" width="414" height="736"/>
                     <connections>
                         <outlet property="tagTextField" destination="HdN-uG-Pn6" id="8Rh-7b-Cob"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="96d-V8-eKJ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3367" y="-142"/>
+            <point key="canvasLocation" x="3493" y="-60"/>
         </scene>
         <!--提示聲-->
         <scene sceneID="8kK-aC-I2Y">
             <objects>
                 <viewController id="ScV-qI-X7f" customClass="VoiceViewController" customModule="時鐘" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Ucj-kS-DOx">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="180"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="716"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" red="0.12984204290000001" green="0.12984612579999999" blue="0.12984395030000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <viewLayoutGuide key="safeArea" id="2mj-hy-WMz"/>
                     </view>
                     <navigationItem key="navigationItem" title="提示聲" id="3oB-2A-8YN"/>
+                    <size key="freeformSize" width="414" height="736"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="LFP-Sk-ghL" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3367" y="188"/>
+            <point key="canvasLocation" x="3493" y="646"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="EO1-cz-EXR">
@@ -471,7 +474,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="AoU-7l-Mdp" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-417.39130434782612" y="-58.258928571428569"/>
+            <point key="canvasLocation" x="-409" y="-59"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="jjD-s3-hRs">
@@ -493,7 +496,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="LHU-kg-JYB" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1096" y="-60"/>
+            <point key="canvasLocation" x="1091" y="-59"/>
         </scene>
     </scenes>
     <resources>

@@ -21,7 +21,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dvq-rN-tRc" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="722" y="-1165"/>
+            <point key="canvasLocation" x="722" y="-1460"/>
         </scene>
         <!--Clock-->
         <scene sceneID="Dev-9R-Oda">
@@ -31,7 +31,7 @@
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3UB-up-G44" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="722" y="-757"/>
+            <point key="canvasLocation" x="722" y="-975"/>
         </scene>
         <!--就寢時間-->
         <scene sceneID="iA8-I3-mdY">
@@ -47,7 +47,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iLM-dv-FOY" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="722" y="-290"/>
+            <point key="canvasLocation" x="722" y="-345"/>
         </scene>
         <!--計時器-->
         <scene sceneID="jZ7-oD-HLX">
@@ -63,7 +63,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6fq-y8-Vku" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="375" y="1171"/>
+            <point key="canvasLocation" x="722" y="1176"/>
         </scene>
         <!--碼錶-->
         <scene sceneID="5Z4-SM-ah9">
@@ -79,7 +79,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="o42-pG-Cq7" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="723" y="448"/>
+            <point key="canvasLocation" x="722" y="412"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="eiL-t2-RAE">

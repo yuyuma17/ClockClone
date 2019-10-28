@@ -14,7 +14,7 @@
 		1609F6D7235E90EB00E18B85 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1609F6D5235E90EB00E18B85 /* LaunchScreen.storyboard */; };
 		1609F6DF235EA14700E18B85 /* Clock.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1609F6DE235EA14700E18B85 /* Clock.storyboard */; };
 		1609F6E1235EB0B100E18B85 /* ClockTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1609F6E0235EB0B100E18B85 /* ClockTableViewController.swift */; };
-		163ED5D0235FED6C00C8B2E0 /* ClockSetting.swift in Sources */ = {isa = PBXBuildFile; fileRef = 163ED5CF235FED6C00C8B2E0 /* ClockSetting.swift */; };
+		163ED5D0235FED6C00C8B2E0 /* ClockModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 163ED5CF235FED6C00C8B2E0 /* ClockModel.swift */; };
 		163ED5FD23601FCF00C8B2E0 /* SettingTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 163ED5FC23601FCF00C8B2E0 /* SettingTableViewController.swift */; };
 		169C24B9236195DB0003EB28 /* TagViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 169C24B8236195DB0003EB28 /* TagViewController.swift */; };
 		169C24BB2361962F0003EB28 /* VoiceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 169C24BA2361962F0003EB28 /* VoiceViewController.swift */; };
@@ -33,7 +33,7 @@
 		1609F6D8235E90EB00E18B85 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1609F6DE235EA14700E18B85 /* Clock.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Clock.storyboard; sourceTree = "<group>"; };
 		1609F6E0235EB0B100E18B85 /* ClockTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClockTableViewController.swift; sourceTree = "<group>"; };
-		163ED5CF235FED6C00C8B2E0 /* ClockSetting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClockSetting.swift; sourceTree = "<group>"; };
+		163ED5CF235FED6C00C8B2E0 /* ClockModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClockModel.swift; sourceTree = "<group>"; };
 		163ED5FC23601FCF00C8B2E0 /* SettingTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingTableViewController.swift; sourceTree = "<group>"; };
 		169C24B8236195DB0003EB28 /* TagViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagViewController.swift; sourceTree = "<group>"; };
 		169C24BA2361962F0003EB28 /* VoiceViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VoiceViewController.swift; sourceTree = "<group>"; };
@@ -88,6 +88,7 @@
 			children = (
 				1609F6D0235E90EB00E18B85 /* Main.storyboard */,
 				1609F6DE235EA14700E18B85 /* Clock.storyboard */,
+				16C1C411236136E000A5D0D3 /* ClockTableViewCell.swift */,
 				1609F6D5235E90EB00E18B85 /* LaunchScreen.storyboard */,
 			);
 			path = VIew;
@@ -97,7 +98,6 @@
 			isa = PBXGroup;
 			children = (
 				1609F6E0235EB0B100E18B85 /* ClockTableViewController.swift */,
-				16C1C411236136E000A5D0D3 /* ClockTableViewCell.swift */,
 				16A37BE2235ED9A2001C4901 /* AddClockViewController.swift */,
 				163ED5FC23601FCF00C8B2E0 /* SettingTableViewController.swift */,
 				16A51F3823617F7200A45B48 /* RepeatOptionViewController.swift */,
@@ -110,7 +110,7 @@
 		163ED5D1235FED7100C8B2E0 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				163ED5CF235FED6C00C8B2E0 /* ClockSetting.swift */,
+				163ED5CF235FED6C00C8B2E0 /* ClockModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -191,7 +191,7 @@
 				16C1C412236136E000A5D0D3 /* ClockTableViewCell.swift in Sources */,
 				163ED5FD23601FCF00C8B2E0 /* SettingTableViewController.swift in Sources */,
 				1609F6E1235EB0B100E18B85 /* ClockTableViewController.swift in Sources */,
-				163ED5D0235FED6C00C8B2E0 /* ClockSetting.swift in Sources */,
+				163ED5D0235FED6C00C8B2E0 /* ClockModel.swift in Sources */,
 				169C24BB2361962F0003EB28 /* VoiceViewController.swift in Sources */,
 				1609F6CB235E90EB00E18B85 /* AppDelegate.swift in Sources */,
 				169C24B9236195DB0003EB28 /* TagViewController.swift in Sources */,

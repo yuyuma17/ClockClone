@@ -16,21 +16,23 @@ class ClockTableViewController: UITableViewController, GetTimeData {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        tableView.tableFooterView = UIView()
+        
         self.navigationItem.leftBarButtonItem = self.editButtonItem
         editButtonItem.title = "編輯"
         editButtonItem.tintColor = .orange
-        
-        tableView.tableFooterView = UIView()
     }
     
     @IBAction func toAddNewClockPage(_ sender: UIBarButtonItem) {
-        let addVCNaviController = UIStoryboard(name: "Clock", bundle: nil).instantiateViewController(withIdentifier: "addVC") as! UINavigationController
-        let addVC = addVCNaviController.viewControllers.first as? AddClockViewController
-        addVC?.getTimeDelegate = self
         
-        present(addVCNaviController, animated: true, completion: nil)
+        let addNewClockNavigationController = UIStoryboard(name: "Clock", bundle: nil).instantiateViewController(withIdentifier: "addVC") as! UINavigationController
+        let addNewClockViewController = addNewClockNavigationController.viewControllers.first as? AddClockViewController
+        addNewClockViewController?.getTimeDelegate = self
+        
+        present(addNewClockNavigationController, animated: true, completion: nil)
     }
     
+    // 接收 Delegate 資料並 ReloadData
     func receiveTimeData(hour: String, minute: String) {
         hourArray.append(hour)
         minuteArray.append(minute)
@@ -49,13 +51,14 @@ class ClockTableViewController: UITableViewController, GetTimeData {
         return cell
     }
     
-    // Override to support conditional editing of the table view.
     override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
         return true
     }
     
+    // 修改編輯按鈕名字和顏色
     override func setEditing(_ editing: Bool, animated: Bool) {
         super.setEditing(editing, animated: animated)
+        
         if(editing) {
             editButtonItem.title = "完成"
             editButtonItem.tintColor = .orange
@@ -66,6 +69,7 @@ class ClockTableViewController: UITableViewController, GetTimeData {
         }
     }
     
+    // TODO
     override func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]? {
         
         let deleteAction = UITableViewRowAction(style: UITableViewRowAction.Style.default, title: "刪除") { (UITableViewRowAction, IndexPath) in
@@ -77,6 +81,7 @@ class ClockTableViewController: UITableViewController, GetTimeData {
         return [deleteAction]
     }
     
+    // TODO
     func setClockAlarm(hour: Int, minute: Int) {
         
         let content = UNMutableNotificationContent()

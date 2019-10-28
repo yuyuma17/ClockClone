@@ -13,44 +13,46 @@ class SettingTableViewController: UITableViewController, GetTagData, GetSelected
     @IBOutlet weak var repeatOptionCell: UITableViewCell!
     @IBOutlet weak var tagOptionCell: UITableViewCell!
     @IBOutlet weak var voiceOptionCell: UITableViewCell!
-    @IBOutlet weak var daysLabel: UILabel!
-    @IBOutlet weak var tagLabel: UILabel!
+    @IBOutlet weak var RepeatOptionLabel: UILabel!
+    @IBOutlet weak var tagOptionLabel: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         tableView.tableFooterView = UIView()
         
-        repeatOptionCell.accessoryView = setAccessoryView() as? UIView
-        tagOptionCell.accessoryView = setAccessoryView() as? UIView
-        voiceOptionCell.accessoryView = setAccessoryView() as? UIView
+        repeatOptionCell.accessoryView = setAccessoryView()
+        tagOptionCell.accessoryView = setAccessoryView()
+        voiceOptionCell.accessoryView = setAccessoryView()
     }
-
-    func setAccessoryView() -> Any {
+    
+    // 將 Accessory 以圖片取代
+    func setAccessoryView() -> UIImageView {
         let indicator = UIImageView(frame: CGRect(x: 0, y: 0, width: 10, height: 16))
         indicator.image = UIImage(named: "indicator")
         return indicator
     }
     
-    func receiveTagData(tag: String) {
-        tagLabel.text = tag
-        print(tag)
-    }
-    
+    // 接收 Delegate 資料
     func receiveSelectedDaysData(days: String) {
-        daysLabel.text = days
+        RepeatOptionLabel.text = days
     }
     
+    // 接收 Delegate 資料
+    func receiveTagData(tag: String) {
+        tagOptionLabel.text = tag
+    }
+    
+    // 修改後的資料亦回傳至下個畫面
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         
-        let toRepeatViewController = segue.destination as? RepeatOptionViewController
-        let toTagViewController = segue.destination as? TagViewController
+        let repeatOptionViewController = segue.destination as? RepeatOptionViewController
+        let tagViewController = segue.destination as? TagViewController
         
-        toTagViewController?.tagText = tagLabel.text!
-        toRepeatViewController?.selectedDays = daysLabel.text
-        toRepeatViewController?.getDaysDelegate = self
-        toTagViewController?.getTagDelegate = self
+        tagViewController?.tagText = tagOptionLabel.text!
+        repeatOptionViewController?.selectedDays = RepeatOptionLabel.text
+        
+        repeatOptionViewController?.getDaysDelegate = self
+        tagViewController?.getTagDelegate = self
     }
-    
-
 }

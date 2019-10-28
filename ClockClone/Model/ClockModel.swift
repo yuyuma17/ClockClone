@@ -1,5 +1,5 @@
 //
-//  ClockSetting.swift
+//  ClockModel.swift
 //  ClockClone
 //
 //  Created by 黃士軒 on 2019/10/23.
