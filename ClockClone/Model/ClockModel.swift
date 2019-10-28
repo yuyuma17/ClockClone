@@ -9,6 +9,6 @@
 import Foundation
 
 struct AlarmData {
-    var hourArray = ["9"]
-    var minuteArray = ["22"]
+    static var hourArray = ["9"]
+    static var minuteArray = ["22"]
 }

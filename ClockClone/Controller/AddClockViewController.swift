@@ -8,16 +8,11 @@
 
 import UIKit
 
-// TODO
-protocol GetTimeData {
-    func receiveTimeData(hour: String, minute: String)
-}
-
 class AddClockViewController: UIViewController {
 
     lazy var time = timePicker.date
     let dateFormatter = DateFormatter()
-    var getTimeDelegate: GetTimeData?
+//    let userDefault = UserDefaults()
     
     @IBOutlet weak var timePicker: UIDatePicker!
     
@@ -27,12 +22,20 @@ class AddClockViewController: UIViewController {
         revisePickerTextColorAndLineColor()
     }
     
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        NotificationCenter.default.post(name: NSNotification.Name(rawValue: "load"), object: nil)
+    }
+    
     @IBAction func cancelAndBackToMainView(_ sender: UIBarButtonItem) {
         dismiss(animated: true, completion: nil)
     }
     
     @IBAction func saveAndAddNewClock(_ sender: UIBarButtonItem) {
-        getTimeDelegate?.receiveTimeData(hour: getPickerHour(), minute: getPickerMinute())
+        AlarmData.hourArray.append(getPickerHour())
+        AlarmData.minuteArray.append(getPickerMinute())
+//        userDefault.set(AlarmData.hourArray, forKey: "hourArray")
+//        userDefault.set(AlarmData.minuteArray, forKey: "minuteArray")
         dismiss(animated: true, completion: nil)
     }
     

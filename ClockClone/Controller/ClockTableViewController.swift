@@ -8,9 +8,7 @@
 
 import UIKit
 
-class ClockTableViewController: UITableViewController, GetTimeData {
-    
-    var alarmData = AlarmData()
+class ClockTableViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -20,33 +18,26 @@ class ClockTableViewController: UITableViewController, GetTimeData {
         self.navigationItem.leftBarButtonItem = self.editButtonItem
         editButtonItem.title = "編輯"
         editButtonItem.tintColor = .orange
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(reloadClockData), name: NSNotification.Name(rawValue: "load"), object: nil)
     }
     
-    @IBAction func toAddNewClockPage(_ sender: UIBarButtonItem) {
-        
-        let addNewClockNavigationController = UIStoryboard(name: "Clock", bundle: nil).instantiateViewController(withIdentifier: "addVC") as! UINavigationController
-        let addNewClockViewController = addNewClockNavigationController.viewControllers.first as? AddClockViewController
-        addNewClockViewController?.getTimeDelegate = self
-        
-        present(addNewClockNavigationController, animated: true, completion: nil)
-    }
-    
-    // 接收 Delegate 資料並 ReloadData
-    func receiveTimeData(hour: String, minute: String) {
-        alarmData.hourArray.append(hour)
-        alarmData.minuteArray.append(minute)
+    @objc func reloadClockData(notification: NSNotification){
         tableView.reloadData()
     }
     
+    @IBAction func toAddNewClockPage(_ sender: UIBarButtonItem) {
+    }
+    
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return alarmData.hourArray.count
+        return AlarmData.hourArray.count
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "ClockCell", for: indexPath) as! ClockTableViewCell
-        cell.hourLabel.text = alarmData.hourArray[indexPath.row]
-        cell.minuteLabel.text = alarmData.minuteArray[indexPath.row]
+        cell.hourLabel.text = AlarmData.hourArray[indexPath.row]
+        cell.minuteLabel.text = AlarmData.minuteArray[indexPath.row]
         return cell
     }
     
@@ -72,8 +63,8 @@ class ClockTableViewController: UITableViewController, GetTimeData {
     override func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
         
         let deleteAction = UIContextualAction(style: .destructive, title: "刪除", handler: { (action, view, success) in
-            self.alarmData.hourArray.remove(at: indexPath.row)
-            self.alarmData.minuteArray.remove(at: indexPath.row)
+            AlarmData.hourArray.remove(at: indexPath.row)
+            AlarmData.minuteArray.remove(at: indexPath.row)
             self.tableView.reloadData()
         })
         deleteAction.backgroundColor = .red
