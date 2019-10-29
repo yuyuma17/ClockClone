@@ -12,7 +12,6 @@ class AddClockViewController: UIViewController {
 
     lazy var time = timePicker.date
     let dateFormatter = DateFormatter()
-//    let userDefault = UserDefaults()
     
     @IBOutlet weak var timePicker: UIDatePicker!
     
@@ -32,21 +31,33 @@ class AddClockViewController: UIViewController {
     }
     
     @IBAction func saveAndAddNewClock(_ sender: UIBarButtonItem) {
-        AlarmData.hourArray.append(getPickerHour())
-        AlarmData.minuteArray.append(getPickerMinute())
-//        userDefault.set(AlarmData.hourArray, forKey: "hourArray")
-//        userDefault.set(AlarmData.minuteArray, forKey: "minuteArray")
+        
+        if getPickerHour() >= 13 && getPickerHour() <= 23 {
+            AlarmData.timePointArray.append("下午")
+            AlarmData.hourArray.append(String(getPickerHour() - 12))
+            AlarmData.minuteArray.append(getPickerMinute())
+        } else if getPickerHour() == 0 {
+            AlarmData.timePointArray.append("上午")
+            AlarmData.hourArray.append(String(getPickerHour() + 12))
+            AlarmData.minuteArray.append(getPickerMinute())
+        } else if getPickerHour() == 12 {
+            AlarmData.timePointArray.append("下午")
+            AlarmData.hourArray.append(String(getPickerHour()))
+            AlarmData.minuteArray.append(getPickerMinute())
+        } else {
+            AlarmData.timePointArray.append("上午")
+            AlarmData.hourArray.append(String(getPickerHour()))
+            AlarmData.minuteArray.append(getPickerMinute())
+        }
         dismiss(animated: true, completion: nil)
     }
     
-    // TODO
-    func getPickerHour() -> String {
+    func getPickerHour() -> Int {
         dateFormatter.dateFormat = "H"
         let hour = dateFormatter.string(from: time)
-        return hour
+        return Int(hour)!
     }
     
-    // TODO
     func getPickerMinute() -> String {
         dateFormatter.dateFormat = "mm"
         let minute = dateFormatter.string(from: time)

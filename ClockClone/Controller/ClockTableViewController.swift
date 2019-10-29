@@ -33,6 +33,7 @@ class ClockTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "ClockCell", for: indexPath) as! ClockTableViewCell
+        cell.timePointLabel.text = AlarmData.timePointArray[indexPath.row]
         cell.hourLabel.text = AlarmData.hourArray[indexPath.row]
         cell.minuteLabel.text = AlarmData.minuteArray[indexPath.row]
 //        cell.toggleSwitch.addTarget(self, action: #selector(alarmOnAndOff(_:)), for: .valueChanged)
