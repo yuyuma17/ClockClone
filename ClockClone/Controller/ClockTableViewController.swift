@@ -23,8 +23,10 @@ class ClockTableViewController: UITableViewController {
         NotificationCenter.default.addObserver(self, selector: #selector(reloadClockData), name: NSNotification.Name(rawValue: "load"), object: nil)
     }
     
+    // 讀取 UserDefaults 裡的資料
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        
         if let storedTimePoint = UserDefaultsWrapper.manager.getStoredTimePoint() {
             AlarmData.timePointArray = storedTimePoint
         }
@@ -82,12 +84,19 @@ class ClockTableViewController: UITableViewController {
         }
     }
     
-    // 取代 editActionsForRowAt 實作刪除按鈕
+    // 取代 editActionsForRowAt 實作刪除按鈕及儲存
     override func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
         
         let deleteAction = UIContextualAction(style: .destructive, title: "刪除", handler: { (action, view, success) in
+            
+            AlarmData.timePointArray.remove(at: indexPath.row)
             AlarmData.hourArray.remove(at: indexPath.row)
             AlarmData.minuteArray.remove(at: indexPath.row)
+            
+            UserDefaultsWrapper.manager.store(timePoint: AlarmData.timePointArray)
+            UserDefaultsWrapper.manager.store(hour: AlarmData.hourArray)
+            UserDefaultsWrapper.manager.store(minute: AlarmData.minuteArray)
+            
             self.tableView.reloadData()
         })
         deleteAction.backgroundColor = .red

@@ -9,7 +9,7 @@
 import Foundation
 
 struct AlarmData {
-    static var timePointArray = ["上午"]
-    static var hourArray = ["9"]
-    static var minuteArray = ["22"]
+    static var timePointArray = [""]
+    static var hourArray = [""]
+    static var minuteArray = [""]
 }

@@ -24,9 +24,6 @@ class AddClockViewController: UIViewController {
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         NotificationCenter.default.post(name: NSNotification.Name(rawValue: "load"), object: nil)
-//        UserDefault().defaults.array(forKey: "timePointArray")
-//        UserDefault().defaults.array(forKey: "hourArray")
-//        UserDefault().defaults.array(forKey: "minuteArray")
     }
     
     @IBAction func cancelAndBackToMainView(_ sender: UIBarButtonItem) {
