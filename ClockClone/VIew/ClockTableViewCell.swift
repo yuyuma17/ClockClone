@@ -31,6 +31,7 @@ class ClockTableViewCell: UITableViewCell {
     }
 
     @IBAction func switchOnAndOff(_ sender: UISwitch) {
+        
         if toggleSwitch.isOn {
             hourLabel.textColor = white
             colonLabel.textColor = white
@@ -40,6 +41,7 @@ class ClockTableViewCell: UITableViewCell {
             daysLabel.textColor = white
             commaImage.image = UIImage(named: "commaWhite")
         }
+            
         else {
             hourLabel.textColor = lightGray
             colonLabel.textColor = lightGray

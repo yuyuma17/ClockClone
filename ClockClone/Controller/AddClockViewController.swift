@@ -36,22 +36,27 @@ class AddClockViewController: UIViewController {
             AlarmData.timePointArray.append("下午")
             AlarmData.hourArray.append(String(getPickerHour() - 12))
             AlarmData.minuteArray.append(getPickerMinute())
+            AlarmData.toggleArray.append(true)
         } else if getPickerHour() == 0 {
             AlarmData.timePointArray.append("上午")
             AlarmData.hourArray.append(String(getPickerHour() + 12))
             AlarmData.minuteArray.append(getPickerMinute())
+            AlarmData.toggleArray.append(true)
         } else if getPickerHour() == 12 {
             AlarmData.timePointArray.append("下午")
             AlarmData.hourArray.append(String(getPickerHour()))
             AlarmData.minuteArray.append(getPickerMinute())
+            AlarmData.toggleArray.append(true)
         } else {
             AlarmData.timePointArray.append("上午")
             AlarmData.hourArray.append(String(getPickerHour()))
             AlarmData.minuteArray.append(getPickerMinute())
+            AlarmData.toggleArray.append(true)
         }
         UserDefaultsWrapper.manager.store(timePoint: AlarmData.timePointArray)
         UserDefaultsWrapper.manager.store(hour: AlarmData.hourArray)
         UserDefaultsWrapper.manager.store(minute: AlarmData.minuteArray)
+        UserDefaultsWrapper.manager.store(toggle: AlarmData.toggleArray)
         dismiss(animated: true, completion: nil)
     }
     

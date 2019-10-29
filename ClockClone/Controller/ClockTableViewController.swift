@@ -36,6 +36,9 @@ class ClockTableViewController: UITableViewController {
         if let storedMinute = UserDefaultsWrapper.manager.getStoredMinute() {
             AlarmData.minuteArray = storedMinute
         }
+        if let storedToggle = UserDefaultsWrapper.manager.getStoredToggle() {
+            AlarmData.toggleArray = storedToggle
+        }
     }
     
     @objc func reloadClockData(notification: NSNotification){
@@ -49,9 +52,12 @@ class ClockTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "ClockCell", for: indexPath) as! ClockTableViewCell
+        
         cell.timePointLabel.text = AlarmData.timePointArray[indexPath.row]
         cell.hourLabel.text = AlarmData.hourArray[indexPath.row]
         cell.minuteLabel.text = AlarmData.minuteArray[indexPath.row]
+        cell.toggleSwitch.isOn = AlarmData.toggleArray[indexPath.row]
+    
 //        cell.toggleSwitch.addTarget(self, action: #selector(alarmOnAndOff(_:)), for: .valueChanged)
         
         return cell
@@ -92,10 +98,12 @@ class ClockTableViewController: UITableViewController {
             AlarmData.timePointArray.remove(at: indexPath.row)
             AlarmData.hourArray.remove(at: indexPath.row)
             AlarmData.minuteArray.remove(at: indexPath.row)
+            AlarmData.toggleArray.remove(at: indexPath.row)
             
             UserDefaultsWrapper.manager.store(timePoint: AlarmData.timePointArray)
             UserDefaultsWrapper.manager.store(hour: AlarmData.hourArray)
             UserDefaultsWrapper.manager.store(minute: AlarmData.minuteArray)
+            UserDefaultsWrapper.manager.store(toggle: AlarmData.toggleArray)
             
             self.tableView.reloadData()
         })
