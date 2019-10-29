@@ -8,6 +8,40 @@
 
 import Foundation
 
-class UserDefault {
-    let defaults = UserDefaults.standard
+class UserDefaultsWrapper {
+    
+    // MARK: - Static Properties
+    static let manager = UserDefaultsWrapper()
+    
+    // MARK: - Internal getter methods
+    func getStoredTimePoint() -> [String]? {
+        return UserDefaults.standard.array(forKey: timePointKey) as? [String]
+    }
+    
+    func getStoredHour() -> [String]? {
+        return UserDefaults.standard.array(forKey: hourKey) as? [String]
+    }
+    
+    func getStoredMinute() -> [String]? {
+        return UserDefaults.standard.array(forKey: minuteKey) as? [String]
+    }
+    
+    
+    // MARK: - Internal setter methods
+    func store(timePoint: [String]) {
+        UserDefaults.standard.set(timePoint, forKey: timePointKey)
+    }
+    
+    func store(hour: [String]) {
+        UserDefaults.standard.set(hour, forKey: hourKey)
+    }
+    
+    func store(minute: [String]) {
+        UserDefaults.standard.set(minute, forKey: minuteKey)
+    }
+    
+    // MARK: - Private Properties
+    private let timePointKey = "timePointArray"
+    private let hourKey = "hourArray"
+    private let minuteKey = "minuteArray"
 }

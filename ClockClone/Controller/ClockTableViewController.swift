@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import UserNotifications
 
 class ClockTableViewController: UITableViewController {
     
@@ -20,6 +21,19 @@ class ClockTableViewController: UITableViewController {
         editButtonItem.tintColor = .orange
         
         NotificationCenter.default.addObserver(self, selector: #selector(reloadClockData), name: NSNotification.Name(rawValue: "load"), object: nil)
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        if let storedTimePoint = UserDefaultsWrapper.manager.getStoredTimePoint() {
+            AlarmData.timePointArray = storedTimePoint
+        }
+        if let storedHour = UserDefaultsWrapper.manager.getStoredHour() {
+            AlarmData.hourArray = storedHour
+        }
+        if let storedMinute = UserDefaultsWrapper.manager.getStoredMinute() {
+            AlarmData.minuteArray = storedMinute
+        }
     }
     
     @objc func reloadClockData(notification: NSNotification){
@@ -49,7 +63,7 @@ class ClockTableViewController: UITableViewController {
 //            print("ccc")
 //        }
 //    }
-    
+
     override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
         return true
     }
