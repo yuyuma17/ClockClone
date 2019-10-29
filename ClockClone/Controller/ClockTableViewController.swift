@@ -26,9 +26,6 @@ class ClockTableViewController: UITableViewController {
         tableView.reloadData()
     }
     
-    @IBAction func toAddNewClockPage(_ sender: UIBarButtonItem) {
-    }
-    
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return AlarmData.hourArray.count
     }
@@ -38,8 +35,19 @@ class ClockTableViewController: UITableViewController {
         let cell = tableView.dequeueReusableCell(withIdentifier: "ClockCell", for: indexPath) as! ClockTableViewCell
         cell.hourLabel.text = AlarmData.hourArray[indexPath.row]
         cell.minuteLabel.text = AlarmData.minuteArray[indexPath.row]
+//        cell.toggleSwitch.addTarget(self, action: #selector(alarmOnAndOff(_:)), for: .valueChanged)
+        
         return cell
     }
+    
+//    @objc func alarmOnAndOff(_ sender: UISwitch!) {
+//        if sender.isOn {
+//            print("cc")
+//        }
+//        else {
+//            print("ccc")
+//        }
+//    }
     
     override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
         return true

@@ -10,10 +10,17 @@ import UIKit
 
 class ClockTableViewCell: UITableViewCell {
 
+    let white = UIColor.white
+    let lightGray = UIColor.lightGray
+    
     @IBOutlet weak var hourLabel: UILabel!
+    @IBOutlet weak var colonLabel: UILabel!
     @IBOutlet weak var minuteLabel: UILabel!
     @IBOutlet weak var timePointLabel: UILabel!
-    @IBOutlet weak var switchOnAndOff: UISwitch!
+    @IBOutlet weak var toggleSwitch: UISwitch!
+    @IBOutlet weak var tagLabel: UILabel!
+    @IBOutlet weak var daysLabel: UILabel!
+    @IBOutlet weak var commaImage: UIImageView!
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -23,5 +30,24 @@ class ClockTableViewCell: UITableViewCell {
         super.setSelected(selected, animated: animated)
     }
 
-
+    @IBAction func switchOnAndOff(_ sender: UISwitch) {
+        if toggleSwitch.isOn {
+            hourLabel.textColor = white
+            colonLabel.textColor = white
+            minuteLabel.textColor = white
+            timePointLabel.textColor = white
+            tagLabel.textColor = white
+            daysLabel.textColor = white
+            commaImage.image = UIImage(named: "commaWhite")
+        }
+        else {
+            hourLabel.textColor = lightGray
+            colonLabel.textColor = lightGray
+            minuteLabel.textColor = lightGray
+            timePointLabel.textColor = lightGray
+            tagLabel.textColor = lightGray
+            daysLabel.textColor = lightGray
+            commaImage.image = UIImage(named: "commaGray")
+        }
+    }
 }

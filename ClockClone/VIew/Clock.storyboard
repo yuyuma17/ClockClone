@@ -24,8 +24,11 @@
                                     <rect key="frame" x="0.0" y="0.0" width="414" height="96.666664123535156"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="JS9-91-bsx">
+                                        <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="JS9-91-bsx">
                                             <rect key="frame" x="345" y="32.666666666666664" width="51" height="31.666666666666664"/>
+                                            <connections>
+                                                <action selector="switchOnAndOff:" destination="tHM-gt-xjg" eventType="valueChanged" id="F7z-gv-xhD"/>
+                                            </connections>
                                         </switch>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="鬧鐘" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gi5-qg-Aq9">
                                             <rect key="frame" x="22" y="67.333333333333329" width="31" height="18"/>
@@ -64,7 +67,7 @@
                                                 <constraint firstAttribute="width" constant="63" id="h9q-Is-KYn"/>
                                             </constraints>
                                             <fontDescription key="fontDescription" type="system" weight="thin" pointSize="52"/>
-                                            <color key="textColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="每天" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RAF-DO-cro">
@@ -73,7 +76,7 @@
                                             <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="comma" translatesAutoresizingMaskIntoConstraints="NO" id="R9L-UO-3MH">
+                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="commaWhite" translatesAutoresizingMaskIntoConstraints="NO" id="R9L-UO-3MH">
                                             <rect key="frame" x="58" y="74" width="10" height="10"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="10" id="MEY-Pv-Z2Q"/>
@@ -107,10 +110,14 @@
                                 </tableViewCellContentView>
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <connections>
+                                    <outlet property="colonLabel" destination="2rJ-I1-h2i" id="vfR-LB-HGQ"/>
+                                    <outlet property="commaImage" destination="R9L-UO-3MH" id="xmm-d3-uF2"/>
+                                    <outlet property="daysLabel" destination="RAF-DO-cro" id="Y3U-sl-vi6"/>
                                     <outlet property="hourLabel" destination="Xi7-Wh-IqC" id="Jue-LP-Ba2"/>
                                     <outlet property="minuteLabel" destination="jZy-tr-aeM" id="tMP-bM-Xq9"/>
-                                    <outlet property="switchOnAndOff" destination="JS9-91-bsx" id="iUf-69-ZU3"/>
+                                    <outlet property="tagLabel" destination="gi5-qg-Aq9" id="We2-s0-ijU"/>
                                     <outlet property="timePointLabel" destination="WgJ-38-wv9" id="INO-Sl-QWM"/>
+                                    <outlet property="toggleSwitch" destination="JS9-91-bsx" id="iUf-69-ZU3"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -124,7 +131,6 @@
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="JyK-yP-caC">
                             <color key="tintColor" red="1" green="0.57810515169999999" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <connections>
-                                <action selector="toAddNewClockPage:" destination="ZPy-wf-jta" id="Dqd-OH-WQd"/>
                                 <segue destination="jgt-10-J95" kind="presentation" id="tmv-on-w4I"/>
                             </connections>
                         </barButtonItem>
@@ -467,7 +473,7 @@
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="5Fb-93-rff" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" barStyle="black" largeTitles="YES" id="2jf-1K-R0O">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="96"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="104.33333333333334"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
@@ -504,6 +510,6 @@
     </scenes>
     <resources>
         <image name="alarm.fill" catalog="system" width="62" height="64"/>
-        <image name="comma" width="207" height="377"/>
+        <image name="commaWhite" width="207" height="377"/>
     </resources>
 </document>
