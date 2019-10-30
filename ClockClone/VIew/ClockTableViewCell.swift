@@ -10,8 +10,8 @@ import UIKit
 
 class ClockTableViewCell: UITableViewCell {
 
-    let white = UIColor.white
-    let lightGray = UIColor.lightGray
+    var cellIndexPathRow: Int!
+    weak var getCellIndexPathRowDelegate: GetCellIndexPathRow?
     
     @IBOutlet weak var hourLabel: UILabel!
     @IBOutlet weak var colonLabel: UILabel!
@@ -29,27 +29,19 @@ class ClockTableViewCell: UITableViewCell {
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
     }
-
+    
     @IBAction func switchOnAndOff(_ sender: UISwitch) {
         
-        if toggleSwitch.isOn {
-            hourLabel.textColor = white
-            colonLabel.textColor = white
-            minuteLabel.textColor = white
-            timePointLabel.textColor = white
-            tagLabel.textColor = white
-            daysLabel.textColor = white
-            commaImage.image = UIImage(named: "commaWhite")
-        }
-            
-        else {
-            hourLabel.textColor = lightGray
-            colonLabel.textColor = lightGray
-            minuteLabel.textColor = lightGray
-            timePointLabel.textColor = lightGray
-            tagLabel.textColor = lightGray
-            daysLabel.textColor = lightGray
-            commaImage.image = UIImage(named: "commaGray")
-        }
+        hourLabel.textColor = sender.isOn ? .white : .lightGray
+        colonLabel.textColor = sender.isOn ? .white : .lightGray
+        minuteLabel.textColor = sender.isOn ? .white : .lightGray
+        timePointLabel.textColor = sender.isOn ? .white : .lightGray
+        tagLabel.textColor = sender.isOn ? .white : .lightGray
+        daysLabel.textColor = sender.isOn ? .white : .lightGray
+        commaImage.image = sender.isOn ? UIImage(named: "commaWhite") : UIImage(named: "commaGray")
+        
+        getCellIndexPathRowDelegate?.receiveCellIndexPathRow(index: cellIndexPathRow)
+        AlarmData.toggleArray[cellIndexPathRow] = sender.isOn ? true : false
+        UserDefaultsWrapper.manager.store(toggle: AlarmData.toggleArray)
     }
 }

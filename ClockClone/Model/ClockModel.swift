@@ -9,19 +9,19 @@
 import Foundation
 
 struct AlarmData {
-    static var timePointArray = [""]
-    static var hourArray = [""]
-    static var minuteArray = [""]
+    static var timePointArray = [String]()
+    static var hourArray = [String]()
+    static var minuteArray = [String]()
     static var toggleArray = [Bool]()
 }
 
-struct MyAlarms {
-    static var alarm: [Alarm] = []
-}
-
-struct Alarm {
-    let timePoint: String
-    let hour: String
-    let miunte: String
-    let toggle: Bool
-}
+//struct MyAlarms {
+//    static var alarm: [Alarm] = []
+//}
+//
+//struct Alarm {
+//    let timePoint: String
+//    let hour: String
+//    let miunte: String
+//    let toggle: Bool
+//}

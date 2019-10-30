@@ -8,10 +8,14 @@
 
 import Foundation
 
-protocol GetSelectedDaysData: class {
+protocol GetSelectedDaysData: AnyObject {
     func receiveSelectedDaysData(days: String)
 }
 
-protocol GetTagData: class {
+protocol GetTagData: AnyObject {
     func receiveTagData(tag: String)
+}
+
+protocol GetCellIndexPathRow: AnyObject {
+    func receiveCellIndexPathRow(index: Int)
 }

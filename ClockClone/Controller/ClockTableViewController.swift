@@ -53,17 +53,39 @@ class ClockTableViewController: UITableViewController {
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "ClockCell", for: indexPath) as! ClockTableViewCell
         
+        if AlarmData.toggleArray[indexPath.row] == true {
+            cell.timePointLabel.textColor = UIColor.white
+            cell.hourLabel.textColor = UIColor.white
+            cell.minuteLabel.textColor = UIColor.white
+            cell.colonLabel.textColor = UIColor.white
+            cell.tagLabel.textColor = UIColor.white
+            cell.daysLabel.textColor = UIColor.white
+            cell.commaImage.image = UIImage(named: "commaWhite")
+        } else {
+            cell.timePointLabel.textColor = UIColor.lightGray
+            cell.hourLabel.textColor = UIColor.lightGray
+            cell.minuteLabel.textColor = UIColor.lightGray
+            cell.colonLabel.textColor = UIColor.lightGray
+            cell.tagLabel.textColor = UIColor.lightGray
+            cell.daysLabel.textColor = UIColor.lightGray
+            cell.commaImage.image = UIImage(named: "commaGray")
+        }
+        
         cell.timePointLabel.text = AlarmData.timePointArray[indexPath.row]
         cell.hourLabel.text = AlarmData.hourArray[indexPath.row]
         cell.minuteLabel.text = AlarmData.minuteArray[indexPath.row]
         cell.toggleSwitch.isOn = AlarmData.toggleArray[indexPath.row]
-    
+        
+        cell.cellIndexPathRow = indexPath.row
+        cell.getCellIndexPathRowDelegate = self
+        
 //        cell.toggleSwitch.addTarget(self, action: #selector(alarmOnAndOff(_:)), for: .valueChanged)
         
         return cell
     }
     
 //    @objc func alarmOnAndOff(_ sender: UISwitch!) {
+//
 //        if sender.isOn {
 //            print("cc")
 //        }
@@ -128,4 +150,11 @@ class ClockTableViewController: UITableViewController {
         
         UNUserNotificationCenter.current().add(request, withCompletionHandler: nil)
     }
+}
+
+extension ClockTableViewController: GetCellIndexPathRow {
+    
+    func receiveCellIndexPathRow(index: Int) {
+    }
+    
 }
