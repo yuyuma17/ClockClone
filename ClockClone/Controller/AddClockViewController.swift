@@ -103,7 +103,6 @@ extension AddClockViewController: GetTagData {
     
     func receiveTagData(tag: String) {
         gettedTags = tag
-        print(gettedTags!)
     }
     
 }

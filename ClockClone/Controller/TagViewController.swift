@@ -10,7 +10,6 @@ import UIKit
 
 class TagViewController: UIViewController {
 
-    var tagText = "鬧鐘"
     weak var getTagDelegate: GetTagData?
     
     @IBOutlet weak var tagTextField: UITextField!
@@ -18,7 +17,7 @@ class TagViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        tagTextField.text = tagText
+        tagTextField.enablesReturnKeyAutomatically = true
         reviseBackButtonNameAndColor()
         reviseTextFieldLeftPadding()
     }
@@ -32,7 +31,12 @@ class TagViewController: UIViewController {
     // 離開畫面時使用 Delegate 傳值到上一頁
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
-        getTagDelegate?.receiveTagData(tag: tagTextField.text!)
+        
+        if tagTextField.text?.count == 0 {
+            getTagDelegate?.receiveTagData(tag: "鬧鐘")
+        } else {
+            getTagDelegate?.receiveTagData(tag: tagTextField.text!)
+        }
     }
     
     func reviseBackButtonNameAndColor() {
@@ -40,12 +44,25 @@ class TagViewController: UIViewController {
         let backButton = UIBarButtonItem()
         backButton.title = "返回"
         self.navigationController?.navigationBar.topItem?.backBarButtonItem = backButton
-        
         self.navigationController?.view.tintColor = UIColor.orange
     }
     
     func reviseTextFieldLeftPadding() {
         tagTextField.leftView = UIView(frame: CGRect(x: 0, y: 0, width: 10, height: tagTextField.frame.height))
         tagTextField.leftViewMode = .always
+    }
+}
+
+extension TagViewController: UITextFieldDelegate {
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        
+        if tagTextField.text?.count == 0 {
+            tagTextField.isEnabled = false
+        } else {
+            tagTextField.isEnabled = true
+        }
+        self.navigationController?.popViewController(animated: true)
+        return true
     }
 }

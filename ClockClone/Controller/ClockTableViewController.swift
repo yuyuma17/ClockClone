@@ -91,10 +91,8 @@ class ClockTableViewController: UITableViewController {
 //    @objc func alarmOnAndOff(_ sender: UISwitch!) {
 //
 //        if sender.isOn {
-//            print("cc")
 //        }
 //        else {
-//            print("ccc")
 //        }
 //    }
 
