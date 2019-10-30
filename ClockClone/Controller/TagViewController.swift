@@ -10,6 +10,7 @@ import UIKit
 
 class TagViewController: UIViewController {
 
+    var tagText = "鬧鐘"
     weak var getTagDelegate: GetTagData?
     
     @IBOutlet weak var tagTextField: UITextField!
@@ -17,6 +18,7 @@ class TagViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        tagTextField.text = tagText
         tagTextField.enablesReturnKeyAutomatically = true
         reviseBackButtonNameAndColor()
         reviseTextFieldLeftPadding()
