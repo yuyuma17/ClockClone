@@ -30,6 +30,10 @@ class UserDefaultsWrapper {
          return UserDefaults.standard.array(forKey: toggleKey) as? [Bool]
      }
     
+    func getStoredTag() -> [String]? {
+        return UserDefaults.standard.array(forKey: tagKey) as? [String]
+    }
+    
     // MARK: - Internal setter methods
     func store(timePoint: [String]) {
         UserDefaults.standard.set(timePoint, forKey: timePointKey)
@@ -47,9 +51,14 @@ class UserDefaultsWrapper {
         UserDefaults.standard.set(toggle, forKey: toggleKey)
     }
     
+    func store(tag: [String]) {
+        UserDefaults.standard.set(tag, forKey: tagKey)
+    }
+    
     // MARK: - Private Properties
     private let timePointKey = "timePointArray"
     private let hourKey = "hourArray"
     private let minuteKey = "minuteArray"
-    private let toggleKey = "toggleKey"
+    private let toggleKey = "toggleArray"
+    private let tagKey = "tagArray"
 }

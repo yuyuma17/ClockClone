@@ -10,6 +10,8 @@ import UIKit
 
 class SettingTableViewController: UITableViewController, GetTagData, GetSelectedDaysData {
     
+    weak var passTagToAddVcDelegate: GetTagData?
+    
     @IBOutlet weak var repeatOptionCell: UITableViewCell!
     @IBOutlet weak var tagOptionCell: UITableViewCell!
     @IBOutlet weak var voiceOptionCell: UITableViewCell!
@@ -24,6 +26,11 @@ class SettingTableViewController: UITableViewController, GetTagData, GetSelected
         repeatOptionCell.accessoryView = setAccessoryView()
         tagOptionCell.accessoryView = setAccessoryView()
         voiceOptionCell.accessoryView = setAccessoryView()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        passTagToAddVcDelegate?.receiveTagData(tag: tagOptionLabel.text!)
     }
     
     // 將 Accessory 以圖片取代

@@ -39,6 +39,9 @@ class ClockTableViewController: UITableViewController {
         if let storedToggle = UserDefaultsWrapper.manager.getStoredToggle() {
             AlarmData.toggleArray = storedToggle
         }
+        if let storedTag = UserDefaultsWrapper.manager.getStoredTag() {
+            AlarmData.tagArray = storedTag
+        }
     }
     
     @objc func reloadClockData(notification: NSNotification){
@@ -74,6 +77,7 @@ class ClockTableViewController: UITableViewController {
         cell.timePointLabel.text = AlarmData.timePointArray[indexPath.row]
         cell.hourLabel.text = AlarmData.hourArray[indexPath.row]
         cell.minuteLabel.text = AlarmData.minuteArray[indexPath.row]
+        cell.tagLabel.text = AlarmData.tagArray[indexPath.row]
         cell.toggleSwitch.isOn = AlarmData.toggleArray[indexPath.row]
         
         cell.cellIndexPathRow = indexPath.row
@@ -121,11 +125,13 @@ class ClockTableViewController: UITableViewController {
             AlarmData.hourArray.remove(at: indexPath.row)
             AlarmData.minuteArray.remove(at: indexPath.row)
             AlarmData.toggleArray.remove(at: indexPath.row)
+            AlarmData.tagArray.remove(at: indexPath.row)
             
             UserDefaultsWrapper.manager.store(timePoint: AlarmData.timePointArray)
             UserDefaultsWrapper.manager.store(hour: AlarmData.hourArray)
             UserDefaultsWrapper.manager.store(minute: AlarmData.minuteArray)
             UserDefaultsWrapper.manager.store(toggle: AlarmData.toggleArray)
+            UserDefaultsWrapper.manager.store(tag: AlarmData.tagArray)
             
             self.tableView.reloadData()
         })

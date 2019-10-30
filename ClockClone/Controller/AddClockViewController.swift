@@ -11,6 +11,7 @@ import UIKit
 class AddClockViewController: UIViewController {
 
     lazy var time = timePicker.date
+    var gettedTags: String! = "鬧鐘"
     let dateFormatter = DateFormatter()
     
     @IBOutlet weak var timePicker: UIDatePicker!
@@ -37,26 +38,31 @@ class AddClockViewController: UIViewController {
             AlarmData.hourArray.append(String(getPickerHour() - 12))
             AlarmData.minuteArray.append(getPickerMinute())
             AlarmData.toggleArray.append(true)
+            AlarmData.tagArray.append(gettedTags)
         } else if getPickerHour() == 0 {
             AlarmData.timePointArray.append("上午")
             AlarmData.hourArray.append(String(getPickerHour() + 12))
             AlarmData.minuteArray.append(getPickerMinute())
             AlarmData.toggleArray.append(true)
+            AlarmData.tagArray.append(gettedTags)
         } else if getPickerHour() == 12 {
             AlarmData.timePointArray.append("下午")
             AlarmData.hourArray.append(String(getPickerHour()))
             AlarmData.minuteArray.append(getPickerMinute())
             AlarmData.toggleArray.append(true)
+            AlarmData.tagArray.append(gettedTags)
         } else {
             AlarmData.timePointArray.append("上午")
             AlarmData.hourArray.append(String(getPickerHour()))
             AlarmData.minuteArray.append(getPickerMinute())
             AlarmData.toggleArray.append(true)
+            AlarmData.tagArray.append(gettedTags)
         }
         UserDefaultsWrapper.manager.store(timePoint: AlarmData.timePointArray)
         UserDefaultsWrapper.manager.store(hour: AlarmData.hourArray)
         UserDefaultsWrapper.manager.store(minute: AlarmData.minuteArray)
         UserDefaultsWrapper.manager.store(toggle: AlarmData.toggleArray)
+        UserDefaultsWrapper.manager.store(tag: AlarmData.tagArray)
         dismiss(animated: true, completion: nil)
     }
     
@@ -85,4 +91,19 @@ class AddClockViewController: UIViewController {
             self.timePicker.setValue(UIColor.white, forKey: "textColor")
         }
     }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
+        let settingTableViewController = segue.destination as? SettingTableViewController
+        settingTableViewController?.passTagToAddVcDelegate = self
+    }
+}
+
+extension AddClockViewController: GetTagData {
+    
+    func receiveTagData(tag: String) {
+        gettedTags = tag
+        print(gettedTags!)
+    }
+    
 }

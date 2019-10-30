@@ -13,6 +13,7 @@ struct AlarmData {
     static var hourArray = [String]()
     static var minuteArray = [String]()
     static var toggleArray = [Bool]()
+    static var tagArray = [String]()
 }
 
 //struct MyAlarms {
