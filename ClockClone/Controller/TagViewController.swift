@@ -10,7 +10,7 @@ import UIKit
 
 class TagViewController: UIViewController {
 
-    var tagText = "鬧鐘"
+    var tagText: String?
     weak var getTagDelegate: GetTagData?
     
     @IBOutlet weak var tagTextField: UITextField!
@@ -21,6 +21,7 @@ class TagViewController: UIViewController {
         tagTextField.text = tagText
         tagTextField.enablesReturnKeyAutomatically = true
         reviseBackButtonNameAndColor()
+        reviseClearButtonColor()
         reviseTextFieldLeftPadding()
     }
     
@@ -47,6 +48,20 @@ class TagViewController: UIViewController {
         backButton.title = "返回"
         self.navigationController?.navigationBar.topItem?.backBarButtonItem = backButton
         self.navigationController?.view.tintColor = UIColor.orange
+    }
+    
+    func reviseClearButtonColor() {
+        let clearButton = UIButton(type: .custom)
+        clearButton.setImage(UIImage(named: "clearButton"), for: .normal)
+        clearButton.imageEdgeInsets = UIEdgeInsets(top: 8, left: 8, bottom: 8, right: 8)
+        clearButton.addTarget(self, action: #selector(clearAllText(sender:)), for: .touchUpInside)
+
+        tagTextField.rightView = clearButton
+        tagTextField.rightViewMode = .whileEditing
+    }
+    
+    @objc func clearAllText(sender : AnyObject) {
+        tagTextField.text = ""
     }
     
     func reviseTextFieldLeftPadding() {
