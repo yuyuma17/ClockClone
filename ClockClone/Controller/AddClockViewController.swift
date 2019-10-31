@@ -10,15 +10,32 @@ import UIKit
 
 class AddClockViewController: UIViewController {
 
+    var nowMode = Mode.Add
     lazy var time = timePicker.date
     var gettedTags: String! = "鬧鐘"
+    var indexPath: IndexPath!
     let dateFormatter = DateFormatter()
+    
+    enum Mode {
+        case Add
+        case Edit
+        
+        var navigationTitle: String {
+            switch self {
+            case .Add:
+                return "加入鬧鐘"
+            case .Edit:
+                return "編輯鬧鐘"
+            }
+        }
+    }
     
     @IBOutlet weak var timePicker: UIDatePicker!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        navigationItem.title = nowMode.navigationTitle
         revisePickerTextColorAndLineColor()
     }
     
@@ -33,30 +50,61 @@ class AddClockViewController: UIViewController {
     
     @IBAction func saveAndAddNewClock(_ sender: UIBarButtonItem) {
         
-        if getPickerHour() >= 13 && getPickerHour() <= 23 {
-            AlarmData.timePointArray.append("下午")
-            AlarmData.hourArray.append(String(getPickerHour() - 12))
-            AlarmData.minuteArray.append(getPickerMinute())
-            AlarmData.toggleArray.append(true)
-            AlarmData.tagArray.append(gettedTags)
-        } else if getPickerHour() == 0 {
-            AlarmData.timePointArray.append("上午")
-            AlarmData.hourArray.append(String(getPickerHour() + 12))
-            AlarmData.minuteArray.append(getPickerMinute())
-            AlarmData.toggleArray.append(true)
-            AlarmData.tagArray.append(gettedTags)
-        } else if getPickerHour() == 12 {
-            AlarmData.timePointArray.append("下午")
-            AlarmData.hourArray.append(String(getPickerHour()))
-            AlarmData.minuteArray.append(getPickerMinute())
-            AlarmData.toggleArray.append(true)
-            AlarmData.tagArray.append(gettedTags)
-        } else {
-            AlarmData.timePointArray.append("上午")
-            AlarmData.hourArray.append(String(getPickerHour()))
-            AlarmData.minuteArray.append(getPickerMinute())
-            AlarmData.toggleArray.append(true)
-            AlarmData.tagArray.append(gettedTags)
+        switch nowMode {
+            case .Add:
+                if getPickerHour() >= 13 && getPickerHour() <= 23 {
+                    AlarmData.timePointArray.append("下午")
+                    AlarmData.hourArray.append(String(getPickerHour() - 12))
+                    AlarmData.minuteArray.append(getPickerMinute())
+                    AlarmData.toggleArray.append(true)
+                    AlarmData.tagArray.append(gettedTags)
+                } else if getPickerHour() == 0 {
+                    AlarmData.timePointArray.append("上午")
+                    AlarmData.hourArray.append(String(getPickerHour() + 12))
+                    AlarmData.minuteArray.append(getPickerMinute())
+                    AlarmData.toggleArray.append(true)
+                    AlarmData.tagArray.append(gettedTags)
+                } else if getPickerHour() == 12 {
+                    AlarmData.timePointArray.append("下午")
+                    AlarmData.hourArray.append(String(getPickerHour()))
+                    AlarmData.minuteArray.append(getPickerMinute())
+                    AlarmData.toggleArray.append(true)
+                    AlarmData.tagArray.append(gettedTags)
+                } else {
+                    AlarmData.timePointArray.append("上午")
+                    AlarmData.hourArray.append(String(getPickerHour()))
+                    AlarmData.minuteArray.append(getPickerMinute())
+                    AlarmData.toggleArray.append(true)
+                    AlarmData.tagArray.append(gettedTags)
+            }
+            case .Edit:
+                let index = indexPath.row
+                
+                if getPickerHour() >= 13 && getPickerHour() <= 23 {
+                    AlarmData.timePointArray[index] = "下午"
+                    AlarmData.hourArray[index] = String(getPickerHour() - 12)
+                    AlarmData.minuteArray[index] = getPickerMinute()
+                    AlarmData.toggleArray[index] = true
+                    AlarmData.tagArray[index] = gettedTags
+                } else if getPickerHour() == 0 {
+                    AlarmData.timePointArray[index] = "上午"
+                    AlarmData.hourArray[index] = String(getPickerHour() + 12)
+                    AlarmData.minuteArray[index] = getPickerMinute()
+                    AlarmData.toggleArray[index] = true
+                    AlarmData.tagArray[index] = gettedTags
+                } else if getPickerHour() == 12 {
+                    AlarmData.timePointArray[index] = "下午"
+                    AlarmData.hourArray[index] = String(getPickerHour())
+                    AlarmData.minuteArray[index] = getPickerMinute()
+                    AlarmData.toggleArray[index] = true
+                    AlarmData.tagArray[index] = gettedTags
+                } else {
+                    AlarmData.timePointArray[index] = "上午"
+                    AlarmData.hourArray[index] = String(getPickerHour())
+                    AlarmData.minuteArray[index] = getPickerMinute()
+                    AlarmData.toggleArray[index] = true
+                    AlarmData.tagArray[index] = gettedTags
+                }
         }
         UserDefaultsWrapper.manager.store(timePoint: AlarmData.timePointArray)
         UserDefaultsWrapper.manager.store(hour: AlarmData.hourArray)

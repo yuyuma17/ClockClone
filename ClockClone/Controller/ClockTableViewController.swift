@@ -16,6 +16,9 @@ class ClockTableViewController: UITableViewController {
         
         tableView.tableFooterView = UIView()
         
+        // 讓編輯模式下也可以 didSelectRowAt
+        tableView.allowsSelectionDuringEditing = true
+        
         self.navigationItem.leftBarButtonItem = self.editButtonItem
         editButtonItem.title = "編輯"
         editButtonItem.tintColor = .orange
@@ -46,6 +49,14 @@ class ClockTableViewController: UITableViewController {
     
     @objc func reloadClockData(notification: NSNotification){
         tableView.reloadData()
+    }
+    @IBAction func toAddNewClockPage(_ sender: UIBarButtonItem) {
+        let addNaviVC = storyboard?.instantiateViewController(withIdentifier: "addNaviVc") as! UINavigationController
+        let addVC = addNaviVC.viewControllers.first as! AddClockViewController
+        
+        addVC.nowMode = .Add
+        
+        present(addNaviVC, animated: true)
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -95,6 +106,21 @@ class ClockTableViewController: UITableViewController {
 //        else {
 //        }
 //    }
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        if tableView.isEditing {
+            
+            let addNaviVC = storyboard?.instantiateViewController(withIdentifier: "addNaviVc") as! UINavigationController
+            let addVC = addNaviVC.viewControllers.first as! AddClockViewController
+            
+            addVC.nowMode = .Edit
+            
+            present(addNaviVC, animated: true) {
+                tableView.isEditing = false
+                self.editButtonItem.title = "編輯"
+            }
+        }
+    }
 
     override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
         return true
@@ -131,7 +157,7 @@ class ClockTableViewController: UITableViewController {
             UserDefaultsWrapper.manager.store(toggle: AlarmData.toggleArray)
             UserDefaultsWrapper.manager.store(tag: AlarmData.tagArray)
             
-            self.tableView.reloadData()
+            tableView.deleteRows(at: [indexPath], with: .fade)
         })
         deleteAction.backgroundColor = .red
         return UISwipeActionsConfiguration(actions: [deleteAction])

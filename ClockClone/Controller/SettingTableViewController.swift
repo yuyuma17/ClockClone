@@ -56,8 +56,8 @@ class SettingTableViewController: UITableViewController, GetTagData, GetSelected
         let repeatOptionViewController = segue.destination as? RepeatOptionViewController
         let tagViewController = segue.destination as? TagViewController
         
-        tagViewController?.tagText = tagOptionLabel.text!
         repeatOptionViewController?.selectedDays = RepeatOptionLabel.text
+        tagViewController?.tagText = tagOptionLabel.text!
         
         repeatOptionViewController?.getDaysDelegate = self
         tagViewController?.getTagDelegate = self
