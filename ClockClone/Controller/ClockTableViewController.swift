@@ -144,6 +144,7 @@ class ClockTableViewController: UITableViewController {
         
         content.body = "鬧鐘"
         content.sound = UNNotificationSound.default
+        content.categoryIdentifier = "alarmAction"
         
         var date = DateComponents()
         date.hour = hour

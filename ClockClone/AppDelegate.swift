@@ -14,6 +14,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         
+        // 詢問授權傳送通知
         UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .sound, .badge]) { (granted, error) in
             
             if granted {
@@ -23,10 +24,18 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
                 print("Not Allowed")
             }
         }
+        
+        // 推播通知上面的按鈕
+        let snoozeButton = UNNotificationAction(identifier: "snooze", title: "稍後提醒", options: [])
+        let stopButton = UNNotificationAction(identifier: "stop", title: "停止", options: [])
+        let category = UNNotificationCategory(identifier: "alarmAction", actions: [snoozeButton, stopButton], intentIdentifiers: [], options: [])
+        UNUserNotificationCenter.current().setNotificationCategories([category])
+        
         UNUserNotificationCenter.current().delegate = self
         return true
     }
     
+    // 前景下也收的到通知
     func userNotificationCenter(_ center: UNUserNotificationCenter, willPresent notification: UNNotification, withCompletionHandler completionHandler: @escaping (UNNotificationPresentationOptions) -> Void) {
 
         completionHandler([.alert, .sound, .badge])
