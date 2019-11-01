@@ -17,6 +17,7 @@
 		1609F6E1235EB0B100E18B85 /* ClockTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1609F6E0235EB0B100E18B85 /* ClockTableViewController.swift */; };
 		163ED5D0235FED6C00C8B2E0 /* ClockModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 163ED5CF235FED6C00C8B2E0 /* ClockModel.swift */; };
 		163ED5FD23601FCF00C8B2E0 /* SettingTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 163ED5FC23601FCF00C8B2E0 /* SettingTableViewController.swift */; };
+		1645D081236C495A00DD5186 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 1645D080236C495A00DD5186 /* README.md */; };
 		169C24B9236195DB0003EB28 /* TagViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 169C24B8236195DB0003EB28 /* TagViewController.swift */; };
 		169C24BB2361962F0003EB28 /* VoiceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 169C24BA2361962F0003EB28 /* VoiceViewController.swift */; };
 		16A37BE3235ED9A2001C4901 /* AddClockViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16A37BE2235ED9A2001C4901 /* AddClockViewController.swift */; };
@@ -38,6 +39,7 @@
 		1609F6E0235EB0B100E18B85 /* ClockTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClockTableViewController.swift; sourceTree = "<group>"; };
 		163ED5CF235FED6C00C8B2E0 /* ClockModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClockModel.swift; sourceTree = "<group>"; };
 		163ED5FC23601FCF00C8B2E0 /* SettingTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingTableViewController.swift; sourceTree = "<group>"; };
+		1645D080236C495A00DD5186 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		169C24B8236195DB0003EB28 /* TagViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagViewController.swift; sourceTree = "<group>"; };
 		169C24BA2361962F0003EB28 /* VoiceViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VoiceViewController.swift; sourceTree = "<group>"; };
 		16A37BE2235ED9A2001C4901 /* AddClockViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddClockViewController.swift; sourceTree = "<group>"; };
@@ -60,6 +62,7 @@
 		1609F6BE235E90EB00E18B85 = {
 			isa = PBXGroup;
 			children = (
+				1645D080236C495A00DD5186 /* README.md */,
 				1609F6C9235E90EB00E18B85 /* ClockClone */,
 				1609F6C8235E90EB00E18B85 /* Products */,
 			);
@@ -189,6 +192,7 @@
 			files = (
 				1609F6D7235E90EB00E18B85 /* LaunchScreen.storyboard in Resources */,
 				1609F6D4235E90EB00E18B85 /* Assets.xcassets in Resources */,
+				1645D081236C495A00DD5186 /* README.md in Resources */,
 				1609F6D2235E90EB00E18B85 /* Main.storyboard in Resources */,
 				1609F6DF235EA14700E18B85 /* Clock.storyboard in Resources */,
 			);
