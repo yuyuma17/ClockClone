@@ -94,18 +94,8 @@ class ClockTableViewController: UITableViewController {
         cell.cellIndexPathRow = indexPath.row
         cell.getCellIndexPathRowDelegate = self
         
-//        cell.toggleSwitch.addTarget(self, action: #selector(alarmOnAndOff(_:)), for: .valueChanged)
-        
         return cell
     }
-    
-//    @objc func alarmOnAndOff(_ sender: UISwitch!) {
-//
-//        if sender.isOn {
-//        }
-//        else {
-//        }
-//    }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         if tableView.isEditing {
@@ -113,6 +103,7 @@ class ClockTableViewController: UITableViewController {
             let addNaviVC = storyboard?.instantiateViewController(withIdentifier: "addNaviVc") as! UINavigationController
             let addVC = addNaviVC.viewControllers.first as! AddClockViewController
             
+            addVC.clockVC = self
             addVC.nowMode = .Edit
             
             present(addNaviVC, animated: true) {

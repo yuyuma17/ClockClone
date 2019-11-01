@@ -19,10 +19,12 @@ class TagViewController: UIViewController {
         super.viewDidLoad()
         
         tagTextField.text = tagText
-        tagTextField.enablesReturnKeyAutomatically = true
         reviseBackButtonNameAndColor()
         reviseClearButtonColor()
         reviseTextFieldLeftPadding()
+        
+        // 開啟讀取 tagTextField 裡如果沒字，就不能按 Done
+        tagTextField.enablesReturnKeyAutomatically = true
     }
     
     // 一進畫面則選到 TextField 且鍵盤隨後彈出
@@ -73,12 +75,6 @@ class TagViewController: UIViewController {
 extension TagViewController: UITextFieldDelegate {
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        
-        if tagTextField.text?.count == 0 {
-            tagTextField.isEnabled = false
-        } else {
-            tagTextField.isEnabled = true
-        }
         self.navigationController?.popViewController(animated: true)
         return true
     }

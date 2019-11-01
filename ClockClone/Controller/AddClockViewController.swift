@@ -11,6 +11,7 @@ import UIKit
 class AddClockViewController: UIViewController {
 
     var nowMode = Mode.Add
+    var clockVC: ClockTableViewController!
     lazy var time = timePicker.date
     var gettedTags: String! = "鬧鐘"
     var indexPath: IndexPath!
