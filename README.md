@@ -13,4 +13,6 @@ If you like this project, you can press ★Star to follow it.
 
 ## Demo
 
-<img src="https://github.com/yuyuma17/DifferentLaunchScreen-DependOnDeviceTime/blob/master/Demo/demo1.gif"> 
+<img src="https://github.com/yuyuma17/iOS-Alarm-Clone/blob/master/Demo/d1.png"> <img src="https://github.com/yuyuma17/iOS-Alarm-Clone/blob/master/Demo/d2.png"> 
+
+
